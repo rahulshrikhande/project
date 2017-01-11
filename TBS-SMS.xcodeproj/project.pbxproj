@@ -12,6 +12,8 @@
 		BFC2567F1E25EC7200682046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC2567D1E25EC7200682046 /* Main.storyboard */; };
 		BFC256811E25EC7200682046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC256801E25EC7200682046 /* Assets.xcassets */; };
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
+		BFC2568C1E260C2C00682046 /* DatabaseLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */; };
+		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		BFC256801E25EC7200682046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC256831E25EC7200682046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseLoginViewController.swift; sourceTree = "<group>"; };
+		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				BFC256801E25EC7200682046 /* Assets.xcassets */,
 				BFC256821E25EC7200682046 /* LaunchScreen.storyboard */,
 				BFC256851E25EC7200682046 /* Info.plist */,
+				BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */,
+				BFC2568D1E260C5000682046 /* LoginViewController.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */,
 				BFC2567C1E25EC7200682046 /* ViewController.swift in Sources */,
+				BFC2568C1E260C2C00682046 /* DatabaseLoginViewController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
