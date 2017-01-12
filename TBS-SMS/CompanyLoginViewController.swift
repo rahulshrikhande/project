@@ -11,7 +11,7 @@ import Alamofire
 
 class CompanyLoginViewController: UIViewController {
     
-    var correctCredentials = false
+    var dbLoggedIn = false
     
     @IBOutlet weak var dbnameTextField: UITextField!
     
@@ -29,7 +29,6 @@ class CompanyLoginViewController: UIViewController {
                     
                     // Store Database Name
                     UserDefaults.standard.set(dbName, forKey: "dbName")
-                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                     UserDefaults.standard.synchronize()
                     
                     self.performSegue(withIdentifier: "userLogin", sender: self)
@@ -38,8 +37,7 @@ class CompanyLoginViewController: UIViewController {
                 }
             }
         }
-    }
-    
+    }    
     
     func showAlertMessage() {
         let alert = UIAlertController(title: "Alert", message: "Wrong Company code", preferredStyle: UIAlertControllerStyle.alert)
@@ -55,9 +53,10 @@ class CompanyLoginViewController: UIViewController {
         navigationBarAppearace.barTintColor = UIColor(red: 205/255, green: 0/255, blue: 0, alpha: 1)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let userLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
-        if userLoggedIn {
+    override func viewWillAppear(_ animated: Bool) {
+        let dbLoggedIn = UserDefaults.standard.bool(forKey: "dbLoggedIn")
+        if dbLoggedIn {
+            //UserDefaults.standard.set(false, forKey: "dbLoggedIn")
             self.dismiss(animated: true, completion: nil)
         }
     }

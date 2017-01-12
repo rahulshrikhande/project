@@ -15,13 +15,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+       /* if let bundle = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundle)
+        }*/
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let userLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        let userLoggedIn = UserDefaults.standard.bool(forKey: "userLoggedIn")
         if !userLoggedIn {
+            
             performSegue(withIdentifier: "databaseLogin", sender: self)
         }
     }
@@ -30,6 +32,11 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func removeUserDefaults() {
+        if let bundle = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundle)
+        }
+    }
 
 }
 

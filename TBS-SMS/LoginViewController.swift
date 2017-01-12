@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.performSegue(withIdentifier: "databaseLogin", sender: self)
+        
     }
 
     @IBOutlet weak var uidTextField: UITextField!
@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(JSON["company_address"], forKey: "CompanyAddress")
                 }
                 UserDefaults.standard.set(true, forKey: "userLoggedIn")
+                UserDefaults.standard.set(true, forKey: "dbLoggedIn")
                 self.dismiss(animated: true, completion: nil)
         }
         
