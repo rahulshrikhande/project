@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423EBAADE67DA88EE2565003 /* Pods_TBS_SMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */; };
+		BF0CA0D91E26176A0045BB79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0CA0D81E26176A0045BB79 /* Alamofire.framework */; };
 		BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC256791E25EC7200682046 /* AppDelegate.swift */; };
-		BFC2567C1E25EC7200682046 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2567B1E25EC7200682046 /* ViewController.swift */; };
+		BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2567B1E25EC7200682046 /* MainViewController.swift */; };
 		BFC2567F1E25EC7200682046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC2567D1E25EC7200682046 /* Main.storyboard */; };
 		BFC256811E25EC7200682046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC256801E25EC7200682046 /* Assets.xcassets */; };
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
-		BFC2568C1E260C2C00682046 /* DatabaseLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */; };
 		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
+		BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602346D37509FF979147AF5F /* Pods-TBS-SMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.debug.xcconfig"; sourceTree = "<group>"; };
+		A0060081309AC2E1E57721BB /* Pods-TBS-SMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.release.xcconfig"; sourceTree = "<group>"; };
+		BF0CA0D81E26176A0045BB79 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		BFC256761E25EC7200682046 /* TBS-SMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBS-SMS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC256791E25EC7200682046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFC2567B1E25EC7200682046 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFC2567B1E25EC7200682046 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BFC2567E1E25EC7200682046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFC256801E25EC7200682046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC256831E25EC7200682046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseLoginViewController.swift; sourceTree = "<group>"; };
 		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBS_SMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423EBAADE67DA88EE2565003 /* Pods_TBS_SMS.framework in Frameworks */,
+				BF0CA0D91E26176A0045BB79 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		546187F5DD61B9A0C91F98C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				602346D37509FF979147AF5F /* Pods-TBS-SMS.debug.xcconfig */,
+				A0060081309AC2E1E57721BB /* Pods-TBS-SMS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		60F87326998845A2D45F7CDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF0CA0D81E26176A0045BB79 /* Alamofire.framework */,
+				DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BFC2566D1E25EC7100682046 = {
 			isa = PBXGroup;
 			children = (
 				BFC256781E25EC7200682046 /* TBS-SMS */,
 				BFC256771E25EC7200682046 /* Products */,
+				546187F5DD61B9A0C91F98C7 /* Pods */,
+				60F87326998845A2D45F7CDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,13 +87,13 @@
 			isa = PBXGroup;
 			children = (
 				BFC256791E25EC7200682046 /* AppDelegate.swift */,
-				BFC2567B1E25EC7200682046 /* ViewController.swift */,
+				BFC2567B1E25EC7200682046 /* MainViewController.swift */,
 				BFC2567D1E25EC7200682046 /* Main.storyboard */,
 				BFC256801E25EC7200682046 /* Assets.xcassets */,
 				BFC256821E25EC7200682046 /* LaunchScreen.storyboard */,
 				BFC256851E25EC7200682046 /* Info.plist */,
-				BFC2568B1E260C2C00682046 /* DatabaseLoginViewController.swift */,
 				BFC2568D1E260C5000682046 /* LoginViewController.swift */,
+				BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -77,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFC256881E25EC7200682046 /* Build configuration list for PBXNativeTarget "TBS-SMS" */;
 			buildPhases = (
+				D6AD38B9D0F3C0BB0ACDF982 /* [CP] Check Pods Manifest.lock */,
 				BFC256721E25EC7100682046 /* Sources */,
 				BFC256731E25EC7100682046 /* Frameworks */,
 				BFC256741E25EC7100682046 /* Resources */,
+				541CF3E1A4F58C4B84775C03 /* [CP] Embed Pods Frameworks */,
+				C68AB182F87AE62A68FD7531 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,15 +168,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		541CF3E1A4F58C4B84775C03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68AB182F87AE62A68FD7531 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6AD38B9D0F3C0BB0ACDF982 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFC256721E25EC7100682046 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */,
-				BFC2567C1E25EC7200682046 /* ViewController.swift in Sources */,
-				BFC2568C1E260C2C00682046 /* DatabaseLoginViewController.swift in Sources */,
+				BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,
+				BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +345,13 @@
 		};
 		BFC256891E25EC7200682046 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 602346D37509FF979147AF5F /* Pods-TBS-SMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "TBS-SMS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbsind.TBS-SMS";
@@ -278,8 +362,13 @@
 		};
 		BFC2568A1E25EC7200682046 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0060081309AC2E1E57721BB /* Pods-TBS-SMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "TBS-SMS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbsind.TBS-SMS";
@@ -307,6 +396,7 @@
 				BFC2568A1E25EC7200682046 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
