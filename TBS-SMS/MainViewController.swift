@@ -10,12 +10,16 @@ import UIKit
 import Alamofire
 import SideMenu
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController {
 
     var userLoggedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Remove Lines
+        self.tableView.separatorStyle = .none
+        //Color top Navigation bar to red
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha: 0.5)
         setupSideMenu()
        /* if let bundle = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundle)
@@ -33,6 +37,13 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+       // view.tintColor = UIColor.init(red: 237/255, green: 33/255, blue: 54/255, alpha: 0.5)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.red
+    }
+    
     
     fileprivate func setupSideMenu() {
         // Define the menus

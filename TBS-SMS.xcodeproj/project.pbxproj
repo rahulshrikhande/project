@@ -94,13 +94,13 @@
 			children = (
 				BFC256791E25EC7200682046 /* AppDelegate.swift */,
 				BFC2567B1E25EC7200682046 /* MainViewController.swift */,
+				BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */,
 				BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */,
 				BFC2568D1E260C5000682046 /* LoginViewController.swift */,
 				BFC2567D1E25EC7200682046 /* Main.storyboard */,
-				BFC256801E25EC7200682046 /* Assets.xcassets */,
 				BFC256821E25EC7200682046 /* LaunchScreen.storyboard */,
+				BFC256801E25EC7200682046 /* Assets.xcassets */,
 				BFC256851E25EC7200682046 /* Info.plist */,
-				BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
