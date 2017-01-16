@@ -49,8 +49,8 @@ class CompanyLoginViewController: UIViewController {
         super.viewDidLoad()
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor(red: 205/255, green: 0/255, blue: 0, alpha: 1)
-        navigationBarAppearace.barTintColor = UIColor(red: 205/255, green: 0/255, blue: 0, alpha: 1)
+        navigationBarAppearace.tintColor = UIColor(red: 199/255, green: 55/255, blue: 53/255, alpha: 0.5)
+        navigationBarAppearace.barTintColor = UIColor(red: 109/255, green: 55/255, blue: 53/255, alpha: 0.5)
     }
     
     override func viewWillAppear(_ animated: Bool) {

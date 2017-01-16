@@ -41,9 +41,10 @@ class LoginViewController: UIViewController {
             .responseJSON { response in
                 if let result = response.result.value {
                     let JSON = result as! NSDictionary
-                    
+                    print(JSON)
                     //storeUserData in local 
                     UserDefaults.standard.set(JSON["id"], forKey: "ID")
+                    UserDefaults.standard.set(user, forKey: "Email")
                     UserDefaults.standard.set(JSON["company_logo"], forKey: "CompanyLogo")
                     UserDefaults.standard.set(JSON["company_name"], forKey: "CompanyName")
                     UserDefaults.standard.set(JSON["company_address"], forKey: "CompanyAddress")
