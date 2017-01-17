@@ -12,5 +12,21 @@ class DataNameList: NSObject {
 
     var unit_id = ""
     var title = ""
+    var invoice_id = ""
+    var company_id = ""
+    var user_id = ""
+    var invoiceNo = ""
+    var customerName = ""
+    var customerMobile = ""
+    var date = ""
+    var amount = ""
+    var per_vat = ""
+    var vat_amount = ""
+    var totalAmount = ""
+    var balance = ""
+    var paidBalance = ""
+    var remainBalance = ""
+    var type = ""
+    var status = ""
 
 }

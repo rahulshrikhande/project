@@ -30,10 +30,16 @@ class SideMenuTableView: UITableViewController {
         imageView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
         tableView.backgroundView = imageView*/
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier!)
+    }
 
     @IBAction func logout(_ sender: UIButton) {
-        
+        if let bundle = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundle)
+        }
     }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.0
     }

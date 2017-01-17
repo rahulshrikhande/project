@@ -98,8 +98,11 @@
                                                 <constraint firstItem="kPV-U4-hVb" firstAttribute="top" secondItem="6PK-BB-uJ1" secondAttribute="top" constant="11" id="uOj-Qx-Z9S"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wsy-mY-o0E" kind="show" identifier="allInvoices" id="Bfm-fA-Dhm"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="T50-dT-Gfn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cancelledInvoices" id="T50-dT-Gfn">
                                         <rect key="frame" x="0.0" y="199" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T50-dT-Gfn" id="fqU-lU-Xm1">
@@ -128,8 +131,11 @@
                                                 <constraint firstItem="K0x-X9-nlJ" firstAttribute="top" secondItem="fqU-lU-Xm1" secondAttribute="topMargin" constant="6" id="qqi-UZ-CH8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wsy-mY-o0E" kind="show" identifier="cancelledInvoices" id="kbH-MW-cSD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ldU-Om-AW1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="manageVat" id="ldU-Om-AW1">
                                         <rect key="frame" x="0.0" y="243" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ldU-Om-AW1" id="4mv-88-RK2">
@@ -158,8 +164,11 @@
                                                 <constraint firstItem="gsW-we-Oj5" firstAttribute="top" secondItem="4mv-88-RK2" secondAttribute="top" constant="11" id="lii-Ri-dJN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AjL-yS-jVp" kind="show" identifier="manageVat" id="8ac-vW-V8O"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NtS-Kj-1sP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="manageUnits" id="NtS-Kj-1sP">
                                         <rect key="frame" x="0.0" y="287" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NtS-Kj-1sP" id="E2Q-dA-DTc">
@@ -192,7 +201,7 @@
                                             <segue destination="tkg-Ll-y2Y" kind="show" identifier="manageUnits" id="ONm-1E-hXW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Uo-2C-4aq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="termsAndCondition" id="8Uo-2C-4aq">
                                         <rect key="frame" x="0.0" y="331" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Uo-2C-4aq" id="kx4-gg-TGD">
@@ -221,13 +230,16 @@
                                                 <constraint firstItem="q04-xr-1Wj" firstAttribute="leading" secondItem="kx4-gg-TGD" secondAttribute="leadingMargin" constant="8" id="wl4-sv-nxK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wJI-Zy-D0j" kind="show" identifier="termsAndCondition" id="HxR-dE-zEK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Communicate" id="UK9-GI-gaF">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f1d-Gk-zIq">
-                                        <rect key="frame" x="0.0" y="432" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="share" id="f1d-Gk-zIq">
+                                        <rect key="frame" x="0.0" y="431" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f1d-Gk-zIq" id="xyc-wm-Kcu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -256,8 +268,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fCL-Zd-cIh">
-                                        <rect key="frame" x="0.0" y="476" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logout" id="fCL-Zd-cIh">
+                                        <rect key="frame" x="0.0" y="475" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCL-Zd-cIh" id="EgF-fn-fuB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -294,7 +306,81 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsb-KM-9Ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3656.521739130435" y="132.88043478260872"/>
+            <point key="canvasLocation" x="3036" y="133"/>
+        </scene>
+        <!--Invoices-->
+        <scene sceneID="QGL-fZ-EQ6">
+            <objects>
+                <viewController storyboardIdentifier="InvoicesViewController" id="Wsy-mY-o0E" customClass="InvoicesViewController" customModule="TBS_SMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oQg-3t-AhB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kaw-Le-JAC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O9h-Ls-vq8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="F4j-Wl-ZUF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Wsy-mY-o0E" id="lsd-Mu-7f7"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-9u-kSV">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wsy-mY-o0E" id="jmL-up-VPC"/>
+                                    <outlet property="delegate" destination="Wsy-mY-o0E" id="NII-rs-Rny"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F4j-Wl-ZUF" firstAttribute="top" secondItem="oQg-3t-AhB" secondAttribute="bottom" id="Afj-QO-p8x"/>
+                            <constraint firstItem="F4j-Wl-ZUF" firstAttribute="leading" secondItem="gPC-9u-kSV" secondAttribute="leading" id="RwK-r3-vOp"/>
+                            <constraint firstItem="gPC-9u-kSV" firstAttribute="bottom" secondItem="Kaw-Le-JAC" secondAttribute="top" id="Ry2-Aq-7kI"/>
+                            <constraint firstItem="gPC-9u-kSV" firstAttribute="leading" secondItem="O9h-Ls-vq8" secondAttribute="leading" id="ToV-yK-Kij"/>
+                            <constraint firstItem="gPC-9u-kSV" firstAttribute="top" secondItem="F4j-Wl-ZUF" secondAttribute="bottom" id="dHu-LM-1JC"/>
+                            <constraint firstAttribute="trailing" secondItem="gPC-9u-kSV" secondAttribute="trailing" id="eg6-uQ-3Or"/>
+                            <constraint firstItem="F4j-Wl-ZUF" firstAttribute="trailing" secondItem="gPC-9u-kSV" secondAttribute="trailing" id="zKZ-8D-ABF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Invoices" id="rB6-ZF-wic">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B1o-dn-HOS">
+                            <connections>
+                                <segue destination="tP3-eI-F9R" kind="show" id="eyU-Vq-Uhy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="F4j-Wl-ZUF" id="BKl-CD-WP2"/>
+                        <outlet property="tableView" destination="gPC-9u-kSV" id="8Y1-cF-TNf"/>
+                        <segue destination="fDg-Nk-JDU" kind="presentation" identifier="showDetails" id="k62-dG-6kj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-QL-u2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4132" y="-680"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cwm-nb-dMb">
+            <objects>
+                <viewController id="fDg-Nk-JDU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l3w-dH-5t8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y9f-ig-4gi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wb5-h9-TBw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNK-JD-0UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5202" y="-681"/>
         </scene>
         <!--Manage Units-->
         <scene sceneID="C6j-CB-EHW">
@@ -309,7 +395,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cEY-eE-COe" id="GH4-Ko-jiQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwX-hv-VV0">
@@ -345,7 +431,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuK-2r-4Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4904.8000000000002" y="403.44827586206901"/>
+            <point key="canvasLocation" x="4170" y="134"/>
+        </scene>
+        <!--Update Vat Controller-->
+        <scene sceneID="6an-92-Rb2">
+            <objects>
+                <viewController storyboardIdentifier="UpdateVatController" id="AjL-yS-jVp" customClass="UpdateVatController" customModule="TBS_SMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yl9-Oa-d0C"/>
+                        <viewControllerLayoutGuide type="bottom" id="HtI-1L-jVy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2AN-CA-LeU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJs-mq-Ani" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2614" y="931"/>
+        </scene>
+        <!--Terms And Condition Controller-->
+        <scene sceneID="FSn-iZ-BI9">
+            <objects>
+                <viewController storyboardIdentifier="TermsAndConditionController" id="wJI-Zy-D0j" customClass="TermsAndConditionController" customModule="TBS_SMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X5o-UI-VCa"/>
+                        <viewControllerLayoutGuide type="bottom" id="emq-99-GSj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vex-1v-0Px">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1iI-0l-pLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3546" y="931"/>
         </scene>
         <!--Add Units-->
         <scene sceneID="c2T-25-vSo">
@@ -362,7 +484,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dQf-6M-cOh" id="8GL-p0-tkt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Units" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1th-jt-ZDt">
@@ -384,12 +506,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Units" id="chu-Bc-tbw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pvq-0a-oZB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pvq-0a-oZB">
+                            <connections>
+                                <action selector="AddUnit" destination="Yfe-Mt-2A6" id="nsv-gV-Gkq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="unitTextField" destination="1th-jt-ZDt" id="0O9-9X-P2l"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5s-AE-90d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5773.6000000000004" y="402.54872563718146"/>
+            <point key="canvasLocation" x="5201" y="133"/>
         </scene>
         <!--Create Invoice-->
         <scene sceneID="vD6-GE-f8c">
@@ -435,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoP-yn-hcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5999999999999" y="-620.23988005997012"/>
+            <point key="canvasLocation" x="3036" y="-639"/>
         </scene>
         <!--Home-->
         <scene sceneID="1TX-g9-mUB">
@@ -629,7 +758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UE4-PK-UKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2191" y="-620"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="3Yx-7X-zag">
@@ -648,7 +777,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ub-PA-sui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2190" y="134"/>
         </scene>
         <!--Company Login View Controller-->
         <scene sceneID="5MP-Mb-x53">
@@ -830,7 +959,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvw-Kh-jrn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="134"/>
+            <point key="canvasLocation" x="1086" y="133"/>
         </scene>
     </scenes>
     <resources>
@@ -845,6 +974,8 @@
         <image name="red_back" width="500" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5mI-mR-m0a"/>
+        <segue reference="Bfm-fA-Dhm"/>
         <segue reference="Eo4-Xw-qp5"/>
     </inferredMetricsTieBreakers>
 </document>

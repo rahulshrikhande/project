@@ -14,6 +14,7 @@ class UnitsListViewController: UITableViewController, UnitDetailViewControllerDe
     func unitDetailViewControllerDidCancel(controller: UnitDetailViewController) {
         dismiss(animated: true, completion: nil)
     }
+    
     func unitDetailViewController(controller: UnitDetailViewController, didFinishAdding unit: DataNameList) {
         let newRowIndex = units.count
         units.append(unit)
@@ -23,11 +24,11 @@ class UnitsListViewController: UITableViewController, UnitDetailViewControllerDe
         tableView.insertRows(at: indexPaths, with: .automatic)
         //Save-query for server
         
-        
         dismiss(animated: true, completion: nil)
         
     }
-    func unitDetailsViewController(controller: UnitDetailViewController, didFinishEditing unit: DataNameList) {
+    
+    func unitDetailViewController(controller: UnitDetailViewController, didFinishEditing unit: DataNameList) {
         
         if let index = units.index(of: unit) {
             let indexPath = IndexPath(row: index, section: 0)
@@ -47,12 +48,12 @@ class UnitsListViewController: UITableViewController, UnitDetailViewControllerDe
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addUnit" {
-            let navigationController = segue.destination as! UINavigationController
-            let controller = navigationController.topViewController as! UnitDetailViewController
+            let navigationController = segue.destination
+            let controller = navigationController as! UnitDetailViewController
             controller.delegate = self
         } else if segue.identifier == "editUnit" {
-            let navigationController = segue.destination as! UINavigationController
-            let controller = navigationController.topViewController as! UnitDetailViewController
+            let navigationController = segue.destination 
+            let controller = navigationController as! UnitDetailViewController
             controller.delegate = self
             
             if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
