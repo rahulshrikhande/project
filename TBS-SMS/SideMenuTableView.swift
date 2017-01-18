@@ -9,8 +9,23 @@
 
 import Foundation
 import SideMenu
+import UIKit
 
-class SideMenuTableView: UITableViewController {
+
+
+class SideMenuTableView: UITableViewController, InvoicesViewControllerDelegate {
+    
+    func allInvoices(controller: InvoicesViewController) {
+        showPage = "AllInvoices"
+        print("hiiii")
+    }
+    
+    func cancelInvoices(controller: InvoicesViewController) {
+        showPage = "CancelInvoices"
+        print("Byeee")
+    }
+    
+    var showPage = ""
     
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha:1)
@@ -24,14 +39,22 @@ class SideMenuTableView: UITableViewController {
         guard tableView.backgroundView == nil else {
             return
         }
-        // Set up a cool background image for demo purposes
-      /*  let imageView = UIImageView(image: UIImage(named: "saturn"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-        tableView.backgroundView = imageView*/
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.identifier!)
+        if segue.identifier == "allInvoices" {
+            let navigationController = segue.destination
+            let controller = navigationController as! InvoicesViewController
+            controller.menuDelegate = self
+            
+            controller.segueToPerform = "allInvoices"
+            
+        } else if segue.identifier == "cancelledInvoices" {
+            let navigationController = segue.destination
+            let controller = navigationController as! InvoicesViewController
+            controller.menuDelegate = self
+            
+            controller.segueToPerform = "cancelledInvoices"
+        }
     }
 
     @IBAction func logout(_ sender: UIButton) {

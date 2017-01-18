@@ -24,7 +24,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.56055998322147649" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="orn-Vu-bqZ">
+                    <activityIndicatorView hidden="YES" opaque="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="orn-Vu-bqZ">
                         <rect key="frame" x="219" y="74" width="20" height="20"/>
                     </activityIndicatorView>
                 </subviews>

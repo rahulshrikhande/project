@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoiceCell" rowHeight="190" id="tSH-lb-uR4" customClass="InvoicesCell" customModule="TBS_SMS" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoicesCell" rowHeight="190" id="tSH-lb-uR4" customClass="InvoicesCell" customModule="TBS_SMS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tSH-lb-uR4" id="1pD-r1-LYN">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invoice No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5L-Uc-6nJ">
@@ -142,11 +142,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cancelled" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-yB-WwI">
+                        <rect key="frame" x="266" y="57" width="70" height="56"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="balanceAmount" destination="d8B-2V-gem" id="HSd-JW-jAN"/>
                 <outlet property="cancel" destination="m9I-zx-X8k" id="eZW-da-kDd"/>
+                <outlet property="cancelledInvoice" destination="Zb1-yB-WwI" id="eVf-Fa-g8e"/>
                 <outlet property="customerName" destination="Zjv-gP-Ecz" id="DcH-5F-LbL"/>
                 <outlet property="invoiceDate" destination="J6f-bQ-XT6" id="YMV-Wd-d8h"/>
                 <outlet property="invoiceNumber" destination="4Ji-Nh-tmD" id="3TO-67-DBo"/>
@@ -156,7 +161,10 @@
                 <outlet property="receipt" destination="8hu-yM-p1g" id="UXN-Fa-9xE"/>
                 <outlet property="totalAmount" destination="3LT-iM-hpK" id="atP-Mp-AQl"/>
             </connections>
-            <point key="canvasLocation" x="-30" y="87"/>
+            <point key="canvasLocation" x="-90.5" y="99"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Cancelled" width="256" height="197"/>
+    </resources>
 </document>

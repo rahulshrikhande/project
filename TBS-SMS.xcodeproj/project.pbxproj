@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		423EBAADE67DA88EE2565003 /* Pods_TBS_SMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */; };
 		BF0CA0D91E26176A0045BB79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0CA0D81E26176A0045BB79 /* Alamofire.framework */; };
+		BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */; };
 		BF6F9EFF1E28CADF0058F50F /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */; };
 		BF6F9F011E28CC640058F50F /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */; };
 		BF86E1781E2DD96700A48ECA /* InvoicesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF86E1771E2DD96700A48ECA /* InvoicesCell.xib */; };
@@ -17,6 +18,7 @@
 		BF86E17E1E2DEC9300A48ECA /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF86E17D1E2DEC9300A48ECA /* NothingFoundCell.xib */; };
 		BF86E1801E2E10C700A48ECA /* TermsAndConditionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E17F1E2E10C700A48ECA /* TermsAndConditionController.swift */; };
 		BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E1811E2E110200A48ECA /* UpdateVatController.swift */; };
+		BF86E1841E2E36A300A48ECA /* InvoiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E1831E2E36A300A48ECA /* InvoiceDetailViewController.swift */; };
 		BF8D25AA1E2CA10B001E5B87 /* CreateInvoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D25A91E2CA10B001E5B87 /* CreateInvoiceController.swift */; };
 		BF8D25AC1E2CA4EF001E5B87 /* UnitsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D25AB1E2CA4EF001E5B87 /* UnitsListViewController.swift */; };
 		BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */; };
@@ -35,6 +37,7 @@
 		602346D37509FF979147AF5F /* Pods-TBS-SMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.debug.xcconfig"; sourceTree = "<group>"; };
 		A0060081309AC2E1E57721BB /* Pods-TBS-SMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.release.xcconfig"; sourceTree = "<group>"; };
 		BF0CA0D81E26176A0045BB79 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
 		BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
 		BF86E1771E2DD96700A48ECA /* InvoicesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicesCell.xib; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 		BF86E17D1E2DEC9300A48ECA /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		BF86E17F1E2E10C700A48ECA /* TermsAndConditionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionController.swift; sourceTree = "<group>"; };
 		BF86E1811E2E110200A48ECA /* UpdateVatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateVatController.swift; sourceTree = "<group>"; };
+		BF86E1831E2E36A300A48ECA /* InvoiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceDetailViewController.swift; sourceTree = "<group>"; };
 		BF8D25A91E2CA10B001E5B87 /* CreateInvoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInvoiceController.swift; sourceTree = "<group>"; };
 		BF8D25AB1E2CA4EF001E5B87 /* UnitsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsListViewController.swift; sourceTree = "<group>"; };
 		BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataNameList.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				BF86E17D1E2DEC9300A48ECA /* NothingFoundCell.xib */,
 				BF86E17F1E2E10C700A48ECA /* TermsAndConditionController.swift */,
 				BF86E1811E2E110200A48ECA /* UpdateVatController.swift */,
+				BF86E1831E2E36A300A48ECA /* InvoiceDetailViewController.swift */,
+				BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -275,8 +281,10 @@
 				BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */,
 				BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */,
 				BF8D25AA1E2CA10B001E5B87 /* CreateInvoiceController.swift in Sources */,
+				BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,
 				BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */,
+				BF86E1841E2E36A300A48ECA /* InvoiceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

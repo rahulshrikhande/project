@@ -11,6 +11,7 @@ import UIKit
 
 class InvoicesCell: UITableViewCell {
     
+    @IBOutlet weak var cancelledInvoice: UIImageView!
     
     @IBOutlet weak var invoiceNumber: UILabel!
     @IBOutlet weak var invoiceDate: UILabel!
@@ -23,7 +24,9 @@ class InvoicesCell: UITableViewCell {
     @IBOutlet weak var receipt: UIButton!
     @IBOutlet weak var payNow: UIButton!
     @IBOutlet weak var cancel: UIButton!
-   
+    
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -34,6 +37,10 @@ class InvoicesCell: UITableViewCell {
         totalAmount.text =  nil
         paidAmount.text =  nil
         balanceAmount.text =  nil
+        payNow.isHidden = false
+        cancelledInvoice.isHidden = false
+        cancel.isHidden = false
+        receipt.isHidden = false
     }
     
     override func awakeFromNib() {
@@ -59,8 +66,15 @@ class InvoicesCell: UITableViewCell {
         paidAmount.text = invoices.paidBalance
         balanceAmount.text = invoices.remainBalance
         
-    }
-    
-    
+        if Float(invoices.remainBalance)! == 0.0 {
+           // cancel.frame = CGRect(261,:145:50:18)
+            payNow.isHidden = true
+        }
+        if invoices.status != "Cancelled" {
+            cancelledInvoice.isHidden = true
+            cancel.isHidden = false
+            receipt.isHidden = false
+        }
+    }    
 }
 

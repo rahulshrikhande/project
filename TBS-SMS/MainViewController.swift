@@ -45,7 +45,18 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.fetchNumbers()
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let userLoggedIn = UserDefaults.standard.bool(forKey: "userLoggedIn")
+        if !userLoggedIn {
+            
+            performSegue(withIdentifier: "databaseLogin", sender: self)
+        } else {
+             self.fetchNumbers()
+        }
+        
     }
     // Fetch Data
     func fetchNumbers() {
@@ -85,14 +96,7 @@ class MainViewController: UITableViewController {
         alert.addAction(myaction)
         present(alert, animated: true, completion: nil)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let userLoggedIn = UserDefaults.standard.bool(forKey: "userLoggedIn")
-        if !userLoggedIn {
-            
-            performSegue(withIdentifier: "databaseLogin", sender: self)
-        }
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
