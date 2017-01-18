@@ -28,5 +28,9 @@ class DataNameList: NSObject {
     var remainBalance = ""
     var type = ""
     var status = ""
+    var productName = ""
+    var quantity = ""
+    var unit = ""
+    var price = ""
 
 }

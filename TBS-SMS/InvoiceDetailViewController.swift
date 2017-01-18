@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class InvoiceDetailViewController: UIViewController {
 
     var invoice: DataNameList!
+    var itemsList = [DataNameList]()
+    var isLoading = false
     
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var invoiceNo: UILabel!
@@ -26,11 +29,12 @@ class InvoiceDetailViewController: UIViewController {
     @IBOutlet weak var companyLogo: UIImageView!
     @IBOutlet weak var cancelledImage: UIImageView!
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchInvoiceView()
         updateUI()
+        
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
         
@@ -56,7 +60,6 @@ class InvoiceDetailViewController: UIViewController {
         if invoice.status != "Cancelled" {
             cancelledImage.isHidden = true
         }
-        
     }
     
     func imageDownload() {
@@ -65,6 +68,68 @@ class InvoiceDetailViewController: UIViewController {
                 let image = UIImage(data: data)
             }
         }
+    }
+    
+    func fetchInvoiceView() {
+        
+        isLoading = true
+        let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
+        let parameters: Parameters = [
+            "company_code": dbNameStored,
+            "invoice_id": invoice.invoice_id
+            ]
+        
+        let url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_invoice_view.php"
+       
+        Alamofire.request(url, parameters: parameters ).responseJSON { response in
+            print("\(response.response)")
+            print("\(response.data)")
+            
+            switch response.result {
+            case .success:
+                self.itemsList = [DataNameList]()
+                if let result = response.result.value {
+                    let dictionary = result as? NSDictionary
+                    
+                    self.itemsList = self.parseDictionary(dictionary: dictionary as! [String : AnyObject])
+                    
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                   //     self.tableView.reloadData()
+                    }
+                }
+            case .failure( _):
+                print("Error")
+            }
+        }
+    }
+    
+    func parseDictionary(dictionary: [String: AnyObject]) -> [DataNameList] {
+        guard let array = dictionary["invoice_details"] as? [AnyObject]
+            else {
+                print("Expected 'result' array")
+                return []
+        }
+        itemsList = [DataNameList]()
+        
+        for resultDict in array {
+            var item: DataNameList?
+            item = parseInvoice(dictionary: resultDict as! [String : AnyObject])
+            if let result = item {
+                itemsList.append(result)
+            }
+        }
+        return itemsList
+    }
+    func parseInvoice(dictionary: [String: AnyObject]) -> DataNameList {
+        let itemList = DataNameList()
+        
+        itemList.productName = dictionary["product_name"] as! String
+        itemList.quantity = dictionary["quantity"] as! String
+        itemList.price = dictionary["price"] as! String
+        itemList.unit = dictionary["unit"] as! String
+        
+        return itemList
     }
 
     @IBAction func close(_ sender: Any) {
@@ -94,14 +159,15 @@ extension InvoiceDetailViewController: UIGestureRecognizerDelegate {
 
 extension InvoiceDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return itemsList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemsList", for: indexPath)
-        
         return cell
-        
     }
+}
+extension InvoiceDetailViewController: UITableViewDelegate {
+
 
 }
 
