@@ -32,5 +32,7 @@ class DataNameList: NSObject {
     var quantity = ""
     var unit = ""
     var price = ""
+    var product_id = ""
+    var product_title = ""
 
 }

@@ -41,6 +41,11 @@ class InvoicesCell: UITableViewCell {
         cancelledInvoice.isHidden = false
         cancel.isHidden = false
         receipt.isHidden = false
+        
+        payNow.layer.cornerRadius = 4
+        receipt.layer.cornerRadius = 4
+        cancel.layer.cornerRadius = 4
+        
     }
     
     override func awakeFromNib() {
