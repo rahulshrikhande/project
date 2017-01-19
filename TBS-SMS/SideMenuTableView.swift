@@ -24,10 +24,14 @@ class SideMenuTableView: UITableViewController, InvoicesViewControllerDelegate {
         showPage = "CancelInvoices"
         print("Byeee")
     }
+    @IBOutlet weak var companyName: UILabel!
     
     var showPage = ""
     
     override func viewDidLoad() {
+        
+        companyName.text = UserDefaults.standard.string(forKey: "CompanyName")
+        
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha:1)
         navigationController?.navigationBar.tintColor = UIColor.white
     }

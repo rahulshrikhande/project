@@ -17,10 +17,8 @@ class MainViewController: UITableViewController {
     @IBOutlet weak var todayReceived: UILabel!
     @IBOutlet weak var todaysCancelled: UILabel!
     
-    
     @IBOutlet weak var thisYearReceived: UILabel!
-    @IBOutlet weak var thisYearCancelled: UILabel!
-    
+    @IBOutlet weak var thisYearCancelled: UILabel!    
     
     @IBOutlet weak var totalReceived: UILabel!
     @IBOutlet weak var totalOutstanding: UILabel!

@@ -31,6 +31,7 @@
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
 		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
 		BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */; };
+		BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductsController.swift; sourceTree = "<group>"; };
 		DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBS_SMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				BF86E1811E2E110200A48ECA /* UpdateVatController.swift */,
 				BF86E1831E2E36A300A48ECA /* InvoiceDetailViewController.swift */,
 				BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */,
+				BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				BF8D25B01E2CEE0D001E5B87 /* UnitDetailViewController.swift in Sources */,
 				BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */,
 				BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */,
+				BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */,
 				BF8D25AC1E2CA4EF001E5B87 /* UnitsListViewController.swift in Sources */,
 				BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */,
 				BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */,

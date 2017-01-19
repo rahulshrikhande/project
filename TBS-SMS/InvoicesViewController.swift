@@ -25,6 +25,8 @@ class InvoicesViewController: UIViewController {
     var invoices = [DataNameList]()
     var segueToPerform = ""
     var url = ""
+    var hasSearched = false
+    var parameters: Parameters = [:]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,13 +68,22 @@ class InvoicesViewController: UIViewController {
         
         isLoading = true
         let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
-        let parameters: Parameters = [
+        parameters = [
             "company_code": dbNameStored,
         ]
         if fetchDataFor == "allInvoices" {
+            title = "All Invoices"
              url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_invoice_data.php"
         } else if fetchDataFor == "cancelledInvoices" {
+            title = "Cancelled Invoices"
              url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_cancelled_invoice_data.php"
+        } else {
+            title = "Searched Invoices"
+             url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_invoice_data.php"
+            parameters = [
+                "company_code" : dbNameStored,
+                "search_value" : fetchDataFor,
+            ]
         }
         Alamofire.request(url, parameters: parameters ).responseJSON { response in
            
@@ -188,4 +199,27 @@ extension InvoicesViewController: UITableViewDelegate {
         }
     }
     
+}
+
+// Search Bar Delegate
+extension InvoicesViewController: UISearchBarDelegate {
+
+    // This tell that enter was clicked and search was performed
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       performSearch()
+    }
+    
+    func performSearch() {
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            isLoading = true
+            tableView.reloadData()
+            invoices = [DataNameList]()
+            hasSearched = true
+            let searchText = searchBar.text!
+            fetchInvoiceData(fetchDataFor: searchText)
+        
+        }
+    }
+
 }
