@@ -24,6 +24,8 @@
 		BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */; };
 		BF8D25B01E2CEE0D001E5B87 /* UnitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D25AF1E2CEE0C001E5B87 /* UnitDetailViewController.swift */; };
 		BFAB73AE1E2D0248001CF424 /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB73AD1E2D0248001CF424 /* InvoicesViewController.swift */; };
+		BFAF33F51E3221DB003D5C47 /* SelectedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAF33F41E3221DB003D5C47 /* SelectedProductCell.xib */; };
+		BFAF33F71E322865003D5C47 /* SelectedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF33F61E322865003D5C47 /* SelectedProductCell.swift */; };
 		BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC256791E25EC7200682046 /* AppDelegate.swift */; };
 		BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2567B1E25EC7200682046 /* MainViewController.swift */; };
 		BFC2567F1E25EC7200682046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC2567D1E25EC7200682046 /* Main.storyboard */; };
@@ -31,6 +33,7 @@
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
 		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
 		BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */; };
+		BFF9A83F1E31D576003F0D23 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */; };
 		BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,8 @@
 		BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataNameList.swift; sourceTree = "<group>"; };
 		BF8D25AF1E2CEE0C001E5B87 /* UnitDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitDetailViewController.swift; sourceTree = "<group>"; };
 		BFAB73AD1E2D0248001CF424 /* InvoicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
+		BFAF33F41E3221DB003D5C47 /* SelectedProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedProductCell.xib; sourceTree = "<group>"; };
+		BFAF33F61E322865003D5C47 /* SelectedProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedProductCell.swift; sourceTree = "<group>"; };
 		BFC256761E25EC7200682046 /* TBS-SMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBS-SMS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC256791E25EC7200682046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC2567B1E25EC7200682046 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsController.swift; sourceTree = "<group>"; };
 		BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductsController.swift; sourceTree = "<group>"; };
 		DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBS_SMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +136,7 @@
 				BFC256801E25EC7200682046 /* Assets.xcassets */,
 				BFC256851E25EC7200682046 /* Info.plist */,
 				BF8D25A91E2CA10B001E5B87 /* CreateInvoiceController.swift */,
+				BFAF33F41E3221DB003D5C47 /* SelectedProductCell.xib */,
 				BF8D25AB1E2CA4EF001E5B87 /* UnitsListViewController.swift */,
 				BF8D25AF1E2CEE0C001E5B87 /* UnitDetailViewController.swift */,
 				BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */,
@@ -143,6 +150,8 @@
 				BF86E1831E2E36A300A48ECA /* InvoiceDetailViewController.swift */,
 				BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */,
 				BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */,
+				BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */,
+				BFAF33F61E322865003D5C47 /* SelectedProductCell.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -210,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */,
+				BFAF33F51E3221DB003D5C47 /* SelectedProductCell.xib in Resources */,
 				BF86E1781E2DD96700A48ECA /* InvoicesCell.xib in Resources */,
 				BF86E17E1E2DEC9300A48ECA /* NothingFoundCell.xib in Resources */,
 				BFC256811E25EC7200682046 /* Assets.xcassets in Resources */,
@@ -282,8 +292,10 @@
 				BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */,
 				BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */,
 				BF8D25AC1E2CA4EF001E5B87 /* UnitsListViewController.swift in Sources */,
+				BFF9A83F1E31D576003F0D23 /* ProductDetailsController.swift in Sources */,
 				BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */,
 				BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */,
+				BFAF33F71E322865003D5C47 /* SelectedProductCell.swift in Sources */,
 				BF8D25AA1E2CA10B001E5B87 /* CreateInvoiceController.swift in Sources */,
 				BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,

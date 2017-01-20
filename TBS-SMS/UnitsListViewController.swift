@@ -177,7 +177,9 @@ class UnitsListViewController: UITableViewController, UnitDetailViewControllerDe
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = "\(unit.title)"
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 
 }

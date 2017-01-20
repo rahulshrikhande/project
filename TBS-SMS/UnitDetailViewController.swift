@@ -62,6 +62,9 @@ class UnitDetailViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     
 

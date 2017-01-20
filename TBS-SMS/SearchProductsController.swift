@@ -9,11 +9,13 @@
 import UIKit
 import Alamofire
 
-class SearchProductsController: UIViewController {
+class SearchProductsController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var proceedButton: UIButton!
+    
+    
     var isLoading = false
     var hasSearched = false
     var products = [DataNameList]()
@@ -27,12 +29,17 @@ class SearchProductsController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 // Table View
 extension SearchProductsController: UITableViewDataSource {
@@ -84,7 +91,6 @@ extension SearchProductsController: UITableViewDelegate {
             return indexPath
         }
     }
-    
 }
 
 // Perform Search
@@ -92,7 +98,6 @@ extension SearchProductsController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSearch()
     }
-    
     func performSearch() {
         
         if !searchBar.text!.isEmpty {
@@ -147,10 +152,8 @@ extension SearchProductsController: UISearchBarDelegate {
     }
     func parseUnit(dictionary: [String: AnyObject]) -> DataNameList {
         let product = DataNameList()
-            
         product.product_id = dictionary["id"] as! String
         product.product_title = dictionary["title"] as! String
         return product
     }
-        
 }
