@@ -62,8 +62,11 @@ class SideMenuTableView: UITableViewController, InvoicesViewControllerDelegate {
     }
 
     @IBAction func logout(_ sender: UIButton) {
-       
-        _ = navigationController?.popToRootViewController(animated: true)
+        if let bundle = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundle)
+            
+            performSegue(withIdentifier: "logout", sender: self)
+        }
         
     }
     

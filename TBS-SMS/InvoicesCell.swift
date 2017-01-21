@@ -25,8 +25,17 @@ class InvoicesCell: UITableViewCell {
     @IBOutlet weak var payNow: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
+    @IBAction func receiptButton(_ sender: Any) {
+        perform(<#T##aSelector: Selector!##Selector!#>)
+    }
     
+    @IBAction func paynowButton(_ sender: Any) {
+        
+    }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
         

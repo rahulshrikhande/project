@@ -38,8 +38,7 @@ class CompanyLoginViewController: UIViewController {
                 }
             }
         }
-    }    
-    
+    }
     func showAlertMessage() {
         let alert = UIAlertController(title: "Alert", message: "Wrong Company code", preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
@@ -52,7 +51,6 @@ class CompanyLoginViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         let dbLoggedIn = UserDefaults.standard.bool(forKey: "dbLoggedIn")
         if dbLoggedIn {
@@ -60,7 +58,6 @@ class CompanyLoginViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class TermsAndConditionController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        webView.loadRequest(URLRequest(url: URL(string: "http://www.tbswebhost.in/sms_uat/iosPhp/update_terms_conditions.php?company_code=kp2855")!))
         // Do any additional setup after loading the view.
     }
 

@@ -88,6 +88,9 @@
                         <state key="normal" title="Receipt">
                             <color key="titleColor" red="1" green="0.96375033939999999" blue="0.97921682200000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="receiptButton:" destination="tSH-lb-uR4" eventType="touchUpInside" id="qN8-Dn-ovd"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgp-ha-htH">
                         <rect key="frame" x="261" y="145" width="50" height="18"/>
@@ -97,6 +100,9 @@
                         <state key="normal" title="Pay Now">
                             <color key="titleColor" red="1" green="0.96375033939999999" blue="0.97921682200000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="paynowButton:" destination="tSH-lb-uR4" eventType="touchUpInside" id="nL5-V9-2ZF"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-zx-X8k">
                         <rect key="frame" x="206" y="145" width="50" height="18"/>
@@ -106,6 +112,9 @@
                         <state key="normal" title="Cancel">
                             <color key="titleColor" red="1" green="0.96375033939999999" blue="0.97921682200000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="cancelButton:" destination="tSH-lb-uR4" eventType="touchUpInside" id="qrF-1d-wvC"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8B-2V-gem">
                         <rect key="frame" x="172" y="124" width="80" height="15"/>
