@@ -22,18 +22,20 @@ class MainViewController: UITableViewController {
     
     @IBOutlet weak var totalReceived: UILabel!
     @IBOutlet weak var totalOutstanding: UILabel!
-    @IBOutlet weak var cancelled: UILabel!
+    @IBOutlet weak var cancelled: UIButton!
     @IBOutlet weak var cancelledAmount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  removeUserDefaults()
-       
+    
+       // showLoader()
         //Remove Lines from UITabelCell
         self.tableView.separatorStyle = .none
         //Color top Navigation bar to red
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
+        cancelled.layer.cornerRadius = 15
+        cancelled.isHidden = true
         setupSideMenu()
         
        /* if let bundle = Bundle.main.bundleIdentifier {
@@ -72,15 +74,20 @@ class MainViewController: UITableViewController {
             case .success:
                 if let result = response.result.value {
                     let JSON = result as? NSDictionary
-                
+                    let cancelledNumber = Int((JSON?["cancelled"]! as? String)!)
+                    if cancelledNumber! > 0 {
+                        self.cancelled.isHidden = false
+                    }
                     self.todayReceived.text = String(JSON?["today_received"]! as! Double)
                     self.todaysCancelled.text = JSON?["today_cancelled"]! as? String
                     self.thisYearReceived.text = JSON?["financeReceived"]! as? String
                     self.thisYearCancelled.text = JSON?["cancelled"]! as? String
                     self.totalReceived.text = JSON?["received"]! as? String
-                    self.totalOutstanding.text = String(format:"%f", (JSON?["outstanding"]! as? Float)!)
-                    self.cancelled.text = JSON?["cancelled"]! as? String
+                    self.totalOutstanding.text = String(format:"%.02f", (JSON?["outstanding"]! as? Float)!)
+                    self.cancelled.setTitle(JSON?["cancelled"]! as? String, for: .normal)
                     self.cancelledAmount.text = JSON?["cancelledAmount"]! as? String
+                    
+                   // self.hideLoader()
                 }
             case .failure( _):
                 self.alertMessage(message: "Error !!! Unable to connect to Network ")
@@ -88,18 +95,36 @@ class MainViewController: UITableViewController {
         }
     
     }
+   /* func showLoader() {
+        
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        alert.view.tintColor = UIColor.black
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x:10,y:5,width: 50,height: 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func hideLoader() {
+        dismiss(animated: false, completion: nil)
+    }*/
+    
     func alertMessage(message: String) {
         let alert = UIAlertController(title: "Network Alert", message: message, preferredStyle: .alert)
         let myaction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         alert.addAction(myaction)
         present(alert, animated: true, completion: nil)
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
        // view.tintColor = UIColor.init(red: 237/255, green: 33/255, blue: 54/255, alpha: 0.5)
         let header = view as! UITableViewHeaderFooterView
@@ -109,7 +134,6 @@ class MainViewController: UITableViewController {
             header.textLabel?.textColor = UIColor.init(red: 0, green: 157/255, blue: 7/255, alpha: 0.5)
         }
     }
-    
     fileprivate func setupSideMenu() {
         // Define the menus
         SideMenuManager.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController

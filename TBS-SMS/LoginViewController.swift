@@ -13,7 +13,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        loginBox.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 4
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -22,6 +23,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var uidTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginBox: UIView!
+    @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func userLogin(_ sender: UIButton) {
         
@@ -39,19 +42,25 @@ class LoginViewController: UIViewController {
         Alamofire.request("http://www.tbswebhost.in/sms_uat/iosPhp/login.php", parameters: parameters)
             .authenticate(user: user, password: password)
             .responseJSON { response in
-                if let result = response.result.value {
-                    let JSON = result as! NSDictionary
-                    print(JSON)
-                    //storeUserData in local 
-                    UserDefaults.standard.set(JSON["id"], forKey: "ID")
-                    UserDefaults.standard.set(user, forKey: "Email")
-                    UserDefaults.standard.set(JSON["company_logo"], forKey: "CompanyLogo")
-                    UserDefaults.standard.set(JSON["company_name"], forKey: "CompanyName")
-                    UserDefaults.standard.set(JSON["company_address"], forKey: "CompanyAddress")
+                
+                switch response.result {
+                case .success:
+                    if let result = response.result.value {
+                        let JSON = result as! NSDictionary
+                        print(JSON)
+                        //storeUserData in local
+                        UserDefaults.standard.set(JSON["id"], forKey: "ID")
+                        UserDefaults.standard.set(user, forKey: "Email")
+                        UserDefaults.standard.set(JSON["company_logo"], forKey: "CompanyLogo")
+                        UserDefaults.standard.set(JSON["company_name"], forKey: "CompanyName")
+                        UserDefaults.standard.set(JSON["company_address"], forKey: "CompanyAddress")
+                    }
+                    UserDefaults.standard.set(true, forKey: "userLoggedIn")
+                    UserDefaults.standard.set(true, forKey: "dbLoggedIn")
+                    self.dismiss(animated: true, completion: nil)
+                case .failure( _):
+                    print("Error")
                 }
-                UserDefaults.standard.set(true, forKey: "userLoggedIn")
-                UserDefaults.standard.set(true, forKey: "dbLoggedIn")
-                self.dismiss(animated: true, completion: nil)
         }
         
     }

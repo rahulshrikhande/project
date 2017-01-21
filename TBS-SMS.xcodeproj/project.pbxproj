@@ -12,6 +12,8 @@
 		BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */; };
 		BF6F9EFF1E28CADF0058F50F /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */; };
 		BF6F9F011E28CC640058F50F /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */; };
+		BF7E4B781E332001009F5B70 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E4B771E332000009F5B70 /* Loading.xib */; };
+		BF7E4B7A1E3320AB009F5B70 /* NothingFound.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E4B791E3320AB009F5B70 /* NothingFound.xib */; };
 		BF86E1781E2DD96700A48ECA /* InvoicesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF86E1771E2DD96700A48ECA /* InvoicesCell.xib */; };
 		BF86E17A1E2DDCE500A48ECA /* InvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E1791E2DDCE500A48ECA /* InvoicesCell.swift */; };
 		BF86E17C1E2DEBB400A48ECA /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF86E17B1E2DEBB400A48ECA /* LoadingCell.xib */; };
@@ -44,6 +46,8 @@
 		BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
 		BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
+		BF7E4B771E332000009F5B70 /* Loading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
+		BF7E4B791E3320AB009F5B70 /* NothingFound.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFound.xib; sourceTree = "<group>"; };
 		BF86E1771E2DD96700A48ECA /* InvoicesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicesCell.xib; sourceTree = "<group>"; };
 		BF86E1791E2DDCE500A48ECA /* InvoicesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesCell.swift; sourceTree = "<group>"; };
 		BF86E17B1E2DEBB400A48ECA /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */,
 				BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */,
 				BFAF33F61E322865003D5C47 /* SelectedProductCell.swift */,
+				BF7E4B771E332000009F5B70 /* Loading.xib */,
+				BF7E4B791E3320AB009F5B70 /* NothingFound.xib */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -220,8 +226,10 @@
 			files = (
 				BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */,
 				BFAF33F51E3221DB003D5C47 /* SelectedProductCell.xib in Resources */,
+				BF7E4B781E332001009F5B70 /* Loading.xib in Resources */,
 				BF86E1781E2DD96700A48ECA /* InvoicesCell.xib in Resources */,
 				BF86E17E1E2DEC9300A48ECA /* NothingFoundCell.xib in Resources */,
+				BF7E4B7A1E3320AB009F5B70 /* NothingFound.xib in Resources */,
 				BFC256811E25EC7200682046 /* Assets.xcassets in Resources */,
 				BF86E17C1E2DEBB400A48ECA /* LoadingCell.xib in Resources */,
 				BFC2567F1E25EC7200682046 /* Main.storyboard in Resources */,

@@ -62,9 +62,9 @@ class SideMenuTableView: UITableViewController, InvoicesViewControllerDelegate {
     }
 
     @IBAction func logout(_ sender: UIButton) {
-        if let bundle = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundle)
-        }
+       
+        _ = navigationController?.popToRootViewController(animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

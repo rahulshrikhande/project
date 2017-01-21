@@ -14,34 +14,37 @@ protocol UnitDetailViewControllerDelegate: class {
     func unitDetailViewController(controller: UnitDetailViewController, didFinishEditing unit: DataNameList)
     func unitDetailViewController(controller: UnitDetailViewController, didFinishAdding unit: DataNameList)
 }
-class UnitDetailViewController: UITableViewController {
+class UnitDetailViewController: UITableViewController, UITextFieldDelegate {
 
     var unitToEdit: DataNameList!
     weak var delegate: UnitDetailViewControllerDelegate?
-    
-    
+    var url = ""
+    var parameters : Parameters = [:]
     @IBOutlet weak var unitTextField: UITextField!
     
     @IBAction func AddUnit() {
-        if let unit = unitToEdit {
-            unit.title = unitTextField.text!
-            
-            //send data to list page i:e StudentListViewController
-            delegate?.unitDetailViewController(controller: self, didFinishEditing: unit)
+        // Update Unit
+        if !unitTextField.text!.isEmpty {
+            if let unit = unitToEdit {
+                unit.title = unitTextField.text!
+                delegate?.unitDetailViewController(controller: self, didFinishEditing: unit)
+                           }
+        // Add Unit
+            else {
+                //Initialize
+                let unit = DataNameList()
+                unit.title = unitTextField.text!
+                delegate?.unitDetailViewController(controller: self, didFinishAdding: unit)
+            }
         } else {
-            //Initialize
-            let unit = DataNameList()
-            unit.title = unitTextField.text!
-            
-            //send data to StudentListViewController
-            delegate?.unitDetailViewController(controller: self, didFinishAdding: unit)
-            let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
-            // Add data to server
-            let parameters: Parameters = ["company_code": dbNameStored, "title":  unitTextField.text!]
-            
-            _ = Alamofire.request("http://www.tbswebhost.in/sms_uat/iosPhp/add_unit.php", parameters: parameters)
-            
+            showAlertMessage(message: "Textfield is required")
         }
+    }
+    func showAlertMessage(message: String) {
+        let alert = UIAlertController(title: "Alert", message: "Wrong Company code", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +53,11 @@ class UnitDetailViewController: UITableViewController {
             unitTextField.text = unit.title            
         }
     }
-
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
@@ -65,7 +65,4 @@ class UnitDetailViewController: UITableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    
-
 }

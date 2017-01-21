@@ -46,8 +46,8 @@ class CreateInvoiceController: UIViewController {
     // Before Calling nib its Cell-Identifiers needs to be described here.
     struct TableViewCellIdentifiers {
         static let selectedProduct = "SelectedProduct"
-        static let nothingFoundCell = "NothingFoundCell"
-        static let loadingCell = "LoadingCell"
+        static let nothingFoundCell = "NothingFound"
+        static let loadingCell = "Loading"
     }
 
 

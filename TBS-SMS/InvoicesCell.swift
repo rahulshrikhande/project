@@ -42,9 +42,9 @@ class InvoicesCell: UITableViewCell {
         cancel.isHidden = false
         receipt.isHidden = false
         
-        payNow.layer.cornerRadius = 4
-        receipt.layer.cornerRadius = 4
-        cancel.layer.cornerRadius = 4
+        payNow.layer.cornerRadius = 5
+        receipt.layer.cornerRadius = 5
+        cancel.layer.cornerRadius = 5
         
     }
     

@@ -14,6 +14,7 @@ class CompanyLoginViewController: UIViewController {
     var dbLoggedIn = false
     
     @IBOutlet weak var dbnameTextField: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     @IBAction func continueToLogin(_ sender: UIButton) {
         //Send Data to server
@@ -47,10 +48,9 @@ class CompanyLoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor(red: 199/255, green: 55/255, blue: 53/255, alpha: 0.5)
-        navigationBarAppearace.barTintColor = UIColor(red: 109/255, green: 55/255, blue: 53/255, alpha: 0.5)
+        continueButton.layer.cornerRadius = 4
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 199/255, green: 53/255, blue: 55/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,16 +68,4 @@ class CompanyLoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

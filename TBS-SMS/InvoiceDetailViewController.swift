@@ -33,8 +33,8 @@ class InvoiceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchInvoiceView()
         
+        fetchInvoiceView()
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
         
@@ -83,7 +83,6 @@ class InvoiceDetailViewController: UIViewController {
             }
         }
     }
-    
     func fetchInvoiceView() {
         
         isLoading = true
@@ -107,6 +106,8 @@ class InvoiceDetailViewController: UIViewController {
                     self.updateUI(dictionary: dictionary as! [String: AnyObject])
                     
                     DispatchQueue.main.async {
+                        
+                       
                         self.isLoading = false
                         self.tableView.reloadData()
                     }
@@ -213,7 +214,6 @@ extension InvoiceDetailViewController: UITableViewDataSource {
                 return cell
             }
     }
-    
 }
 extension InvoiceDetailViewController: UITableViewDelegate {
 

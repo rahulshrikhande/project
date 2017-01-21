@@ -71,10 +71,10 @@ class InvoicesViewController: UIViewController {
         parameters = [
             "company_code": dbNameStored,
         ]
-        if fetchDataFor == "allInvoices" {
+        if fetchDataFor == "allInvoices"  {
             title = "All Invoices"
              url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_invoice_data.php"
-        } else if fetchDataFor == "cancelledInvoices" {
+        } else if fetchDataFor == "cancelledInvoices" || fetchDataFor.isEmpty {
             title = "Cancelled Invoices"
              url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_cancelled_invoice_data.php"
         } else {
