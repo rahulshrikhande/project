@@ -13,18 +13,7 @@ protocol InvoicesViewControllerDelegate: class {
     func allInvoices(controller: InvoicesViewController)
     func cancelInvoices(controller: InvoicesViewController)
 }
-
-class InvoicesViewController: UIViewController, InvoiceCellDelegate {
-    
-    internal func goToPayNow() {
-       performSegue(withIdentifier: "receipt", sender: self)
-    }
-    internal func goToReceipt() {
-        performSegue(withIdentifier: "receipt", sender: self)
-    }
-    internal func goToCancel() {
-        performSegue(withIdentifier: "receipt", sender: self)
-    }
+class InvoicesViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -37,12 +26,8 @@ class InvoicesViewController: UIViewController, InvoiceCellDelegate {
     var url = ""
     var hasSearched = false
     var parameters: Parameters = [:]
+    let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,21 +43,15 @@ class InvoicesViewController: UIViewController, InvoiceCellDelegate {
         cellNib = UINib( nibName: TableViewCellIdentifiers.loadingCell, bundle: nil )
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         self.fetchInvoiceData(fetchDataFor: segueToPerform)
-        
-        
-        let myCustomView = Bundle.main.loadNibNamed(TableViewCellIdentifiers.invoiceCell, owner: self, options: nil)?[0] as! InvoicesCell
-        myCustomView.delegate = self
+
         // Do any additional setup after loading the view.
     }
-    
-   
     // Before Calling nib its Cell-Identifiers needs to be described here.
     struct TableViewCellIdentifiers {
         static let invoiceCell = "InvoicesCell"
         static let nothingFoundCell = "NothingFoundCell"
         static let loadingCell = "LoadingCell"
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,7 +60,7 @@ class InvoicesViewController: UIViewController, InvoiceCellDelegate {
     func fetchInvoiceData(fetchDataFor: String) {
         
         isLoading = true
-        let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
+        
         parameters = [
             "company_code": dbNameStored,
         ]
@@ -119,7 +98,6 @@ class InvoicesViewController: UIViewController, InvoiceCellDelegate {
             }
         }
     }
-    
     func parseDictionary(dictionary: [String: AnyObject]) -> [DataNameList] {
         guard let array = dictionary["invoices"] as? [AnyObject]
             else {
@@ -209,10 +187,41 @@ extension InvoicesViewController: UITableViewDataSource {
         self.performSegue(withIdentifier: "paynow", sender: sender)
     }
     func cancelButtonTapped(_ sender:UIButton!){
-        print(sender.tag)
+        let refreshAlert = UIAlertController(title: "Cancel Invoice !!!", message: "Are you Sure ?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Ok login here
+            self.parameters = [
+                "company_code" : self.dbNameStored,
+                "invoice_id" : sender.tag,
+            ]
+            self.url = "http://www.tbswebhost.in/sms_uat/iosPhp/cancel_invoice.php"
+            
+            Alamofire.request(self.url, parameters: self.parameters ).responseJSON { response in
+                
+                switch response.result {
+                case .success:
+                    self.showAlertMessage(message: "Invoice Canclled Successfully")
+                    self.fetchInvoiceData(fetchDataFor: "allInvoices")
+                case .failure( _):
+                    self.showAlertMessage(message: "Network not Responding !! Please try Again ")
+                }
+            }
+        }))
+        // Cancel Login here
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func showAlertMessage(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
-
 // extension for UITableViewDelegate
 extension InvoicesViewController: UITableViewDelegate {
     

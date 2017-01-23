@@ -34,5 +34,9 @@ class DataNameList: NSObject {
     var price = ""
     var product_id = ""
     var product_title = ""
+    var chequeNo = ""
+    var paymentType = ""
+    var receiptNo = ""
+    var tranDate = ""
 
 }

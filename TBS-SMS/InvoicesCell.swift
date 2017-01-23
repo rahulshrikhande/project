@@ -9,15 +9,7 @@
 import Foundation
 import UIKit
 
-protocol InvoiceCellDelegate: class {
-    func goToReceipt()
-    func goToPayNow()
-    func goToCancel()
-}
-
 class InvoicesCell: UITableViewCell {
-    
-    weak var delegate: InvoiceCellDelegate?
     
     @IBOutlet weak var cancelledInvoice: UIImageView!
     
@@ -33,7 +25,7 @@ class InvoicesCell: UITableViewCell {
     @IBOutlet weak var payNow: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -78,13 +70,17 @@ class InvoicesCell: UITableViewCell {
         balanceAmount.text = invoices.remainBalance
         
         if Float(invoices.remainBalance)! == 0.0 {
-           // cancel.frame = CGRect(261,:145:50:18)
+            cancel.frame = CGRect(x:261,y:145,width:50,height:18)
             payNow.isHidden = true
         }
         if invoices.status != "Cancelled" {
             cancelledInvoice.isHidden = true
             cancel.isHidden = false
             receipt.isHidden = false
+        } else {
+            cancel.isHidden = true
+            receipt.isHidden = true
+            payNow.isHidden = true
         }
     }    
 }
