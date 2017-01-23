@@ -294,7 +294,7 @@
                     <navigationItem key="navigationItem" title="Invoices" id="rB6-ZF-wic">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B1o-dn-HOS">
                             <connections>
-                                <segue destination="tP3-eI-F9R" kind="show" id="eyU-Vq-Uhy"/>
+                                <segue destination="tP3-eI-F9R" kind="show" identifier="createInvoice" id="eyU-Vq-Uhy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -302,11 +302,59 @@
                         <outlet property="searchBar" destination="F4j-Wl-ZUF" id="BKl-CD-WP2"/>
                         <outlet property="tableView" destination="gPC-9u-kSV" id="8Y1-cF-TNf"/>
                         <segue destination="fDg-Nk-JDU" kind="presentation" identifier="showDetails" id="k62-dG-6kj"/>
+                        <segue destination="ld8-Kh-WhO" kind="presentation" identifier="receipt" id="Ad7-Z5-H8q"/>
+                        <segue destination="d2t-iN-HpU" kind="show" identifier="paynow" id="5VW-TU-kQV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-QL-u2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4129" y="-620"/>
+            <point key="canvasLocation" x="4230" y="-620"/>
+        </scene>
+        <!--Receipt View Controller-->
+        <scene sceneID="qu6-8g-Zog">
+            <objects>
+                <viewController storyboardIdentifier="ReceiptViewController" id="ld8-Kh-WhO" customClass="ReceiptViewController" customModule="TBS_SMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qOd-lP-sc0"/>
+                        <viewControllerLayoutGuide type="bottom" id="7C6-ja-wAm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nX5-IT-Sl6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQi-lS-AqL">
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="ld8-Kh-WhO" eventType="touchUpInside" id="uzv-j0-pYo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRg-hd-jhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5276" y="-620"/>
+        </scene>
+        <!--Paynow View Controller-->
+        <scene sceneID="gNY-ZS-vGN">
+            <objects>
+                <viewController storyboardIdentifier="PaynowViewController" id="d2t-iN-HpU" customClass="PaynowViewController" customModule="TBS_SMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ufk-DP-g20"/>
+                        <viewControllerLayoutGuide type="bottom" id="CrW-IX-tBk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="osE-JH-8M2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OR-hZ-62V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5276" y="179"/>
         </scene>
         <!--Search Product-->
         <scene sceneID="q2S-du-Yvs">
@@ -387,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UM-ji-2d8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4129" y="-1409"/>
+            <point key="canvasLocation" x="4230" y="-1409"/>
         </scene>
         <!--Product Details Controller-->
         <scene sceneID="qvm-xl-6Yh">
@@ -487,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUK-4h-ZAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="-1409"/>
+            <point key="canvasLocation" x="3150" y="-1409"/>
         </scene>
         <!--Invoice Detail View Controller-->
         <scene sceneID="Cwm-nb-dMb">
@@ -746,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNK-JD-0UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="-620"/>
+            <point key="canvasLocation" x="5276" y="-1409"/>
         </scene>
         <!--Manage Units-->
         <scene sceneID="C6j-CB-EHW">
@@ -797,7 +845,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuK-2r-4Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4130" y="179"/>
+            <point key="canvasLocation" x="4230" y="179"/>
         </scene>
         <!--Update Vat Controller-->
         <scene sceneID="6an-92-Rb2">
@@ -875,7 +923,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJs-mq-Ani" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="930.58470764617698"/>
+            <point key="canvasLocation" x="2791" y="931"/>
         </scene>
         <!--Terms And Condition Controller-->
         <scene sceneID="FSn-iZ-BI9">
@@ -903,7 +951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iI-0l-pLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3685.5999999999999" y="930.58470764617698"/>
+            <point key="canvasLocation" x="3492" y="931"/>
         </scene>
         <!--Add Units-->
         <scene sceneID="c2T-25-vSo">
@@ -954,7 +1002,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5s-AE-90d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="179"/>
+            <point key="canvasLocation" x="4230" y="931"/>
         </scene>
         <!--Create Invoice-->
         <scene sceneID="vD6-GE-f8c">
@@ -1390,7 +1438,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYc-E2-OxR">
                             <connections>
-                                <segue destination="tP3-eI-F9R" kind="show" id="5mI-mR-m0a"/>
+                                <segue destination="tP3-eI-F9R" kind="show" identifier="createInvoice" id="5mI-mR-m0a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1630,7 +1678,7 @@
         <image name="red_back" width="500" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bfm-fA-Dhm"/>
+        <segue reference="kbH-MW-cSD"/>
         <segue reference="Eoh-eo-vOB"/>
         <segue reference="sQs-UB-oCR"/>
         <segue reference="Eo4-Xw-qp5"/>

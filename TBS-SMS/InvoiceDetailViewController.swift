@@ -33,7 +33,6 @@ class InvoiceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         fetchInvoiceView()
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
@@ -155,12 +154,15 @@ class InvoiceDetailViewController: UIViewController {
             return value
         }
     }
-
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    // If touched anywhere on screen, modal dismisses
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier!)
     }
 }
 

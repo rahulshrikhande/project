@@ -14,7 +14,17 @@ protocol InvoicesViewControllerDelegate: class {
     func cancelInvoices(controller: InvoicesViewController)
 }
 
-class InvoicesViewController: UIViewController {
+class InvoicesViewController: UIViewController, InvoiceCellDelegate {
+    
+    internal func goToPayNow() {
+       performSegue(withIdentifier: "receipt", sender: self)
+    }
+    internal func goToReceipt() {
+        performSegue(withIdentifier: "receipt", sender: self)
+    }
+    internal func goToCancel() {
+        performSegue(withIdentifier: "receipt", sender: self)
+    }
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -49,9 +59,13 @@ class InvoicesViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         self.fetchInvoiceData(fetchDataFor: segueToPerform)
         
+        
+        let myCustomView = Bundle.main.loadNibNamed(TableViewCellIdentifiers.invoiceCell, owner: self, options: nil)?[0] as! InvoicesCell
+        myCustomView.delegate = self
         // Do any additional setup after loading the view.
     }
-  
+    
+   
     // Before Calling nib its Cell-Identifiers needs to be described here.
     struct TableViewCellIdentifiers {
         static let invoiceCell = "InvoicesCell"
@@ -168,9 +182,34 @@ extension InvoicesViewController: UITableViewDataSource {
             return tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.nothingFoundCell, for: indexPath)
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.invoiceCell, for: indexPath) as! InvoicesCell
+        
         let invoiceList = invoices[indexPath.row]
+        
+        // configure cell button from nib
+        // Receipt Button
+        cell.receipt.tag = Int(invoiceList.invoice_id)!
+        cell.receipt.addTarget(self, action: #selector(InvoicesViewController.buttonTapped(_:)), for: UIControlEvents.touchUpInside)
+        
+        // Paynow button 
+        cell.payNow.tag = Int(invoiceList.invoice_id)!
+        cell.payNow.addTarget(self, action: #selector(InvoicesViewController.payNowbuttonTapped(_:)), for: UIControlEvents.touchUpInside)
+        
+        //Cancel button
+        cell.cancel.tag = Int(invoiceList.invoice_id)!
+        cell.cancel.addTarget(self, action: #selector(InvoicesViewController.cancelButtonTapped(_:)), for: UIControlEvents.touchUpInside)
+        
+        //Pass selected Data to variable
         cell.configureForInvoicesList(invoices: invoiceList)
         return cell
+    }
+    func buttonTapped(_ sender:UIButton!){
+        self.performSegue(withIdentifier: "receipt", sender: sender)
+    }
+    func payNowbuttonTapped(_ sender:UIButton!){
+        self.performSegue(withIdentifier: "paynow", sender: sender)
+    }
+    func cancelButtonTapped(_ sender:UIButton!){
+        print(sender.tag)
     }
 }
 
@@ -199,9 +238,20 @@ extension InvoicesViewController: UITableViewDelegate {
             let indexPath = sender as! NSIndexPath
             let invoice = invoices[indexPath.row]
             detailViewController.invoice = invoice
+        } else if segue.identifier == "receipt" {
+            if let destination = segue.destination as? ReceiptViewController {
+                if let button:UIButton = sender as! UIButton? {
+                    destination.valueViaSegue = String(button.tag)
+                }
+            }
+        } else if segue.identifier == "paynow" {
+            if let destination = segue.destination as? PaynowViewController {
+                if let button:UIButton = sender as! UIButton? {
+                    destination.valueViaSegue = String(button.tag)
+                }
+            }
         }
     }
-    
 }
 
 // Search Bar Delegate

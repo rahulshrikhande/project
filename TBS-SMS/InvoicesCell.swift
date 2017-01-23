@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
+protocol InvoiceCellDelegate: class {
+    func goToReceipt()
+    func goToPayNow()
+    func goToCancel()
+}
+
 class InvoicesCell: UITableViewCell {
+    
+    weak var delegate: InvoiceCellDelegate?
     
     @IBOutlet weak var cancelledInvoice: UIImageView!
     
@@ -25,17 +33,7 @@ class InvoicesCell: UITableViewCell {
     @IBOutlet weak var payNow: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
-    @IBAction func receiptButton(_ sender: Any) {
-        perform(<#T##aSelector: Selector!##Selector!#>)
-    }
-    
-    @IBAction func paynowButton(_ sender: Any) {
-        
-    }
-    
-    @IBAction func cancelButton(_ sender: Any) {
-        
-    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -50,15 +48,14 @@ class InvoicesCell: UITableViewCell {
         cancelledInvoice.isHidden = false
         cancel.isHidden = false
         receipt.isHidden = false
-        
-        payNow.layer.cornerRadius = 5
-        receipt.layer.cornerRadius = 5
-        cancel.layer.cornerRadius = 5
-        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        payNow.layer.cornerRadius = 5
+        receipt.layer.cornerRadius = 5
+        cancel.layer.cornerRadius = 5
+        
         let selectedView = UIView(frame: CGRect.zero)
         selectedView.backgroundColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 0.5)
         selectedBackgroundView = selectedView

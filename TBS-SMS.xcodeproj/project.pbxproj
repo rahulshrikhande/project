@@ -35,6 +35,8 @@
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
 		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
 		BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */; };
+		BFDF53E71E35CF5900DA028A /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF53E61E35CF5900DA028A /* ReceiptViewController.swift */; };
+		BFDF53E91E35D76D00DA028A /* PaynowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF53E81E35D76D00DA028A /* PaynowViewController.swift */; };
 		BFF9A83F1E31D576003F0D23 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */; };
 		BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		BFDF53E61E35CF5900DA028A /* ReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		BFDF53E81E35D76D00DA028A /* PaynowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaynowViewController.swift; sourceTree = "<group>"; };
 		BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsController.swift; sourceTree = "<group>"; };
 		BFFABD4E1E30CFDA00153D43 /* SearchProductsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductsController.swift; sourceTree = "<group>"; };
 		DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBS_SMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,8 @@
 				BF8D25AF1E2CEE0C001E5B87 /* UnitDetailViewController.swift */,
 				BF8D25AD1E2CB76B001E5B87 /* DataNameList.swift */,
 				BFAB73AD1E2D0248001CF424 /* InvoicesViewController.swift */,
+				BFDF53E61E35CF5900DA028A /* ReceiptViewController.swift */,
+				BFDF53E81E35D76D00DA028A /* PaynowViewController.swift */,
 				BF86E1791E2DDCE500A48ECA /* InvoicesCell.swift */,
 				BF86E1771E2DD96700A48ECA /* InvoicesCell.xib */,
 				BF86E17B1E2DEBB400A48ECA /* LoadingCell.xib */,
@@ -297,6 +303,8 @@
 				BF86E1801E2E10C700A48ECA /* TermsAndConditionController.swift in Sources */,
 				BF8D25B01E2CEE0D001E5B87 /* UnitDetailViewController.swift in Sources */,
 				BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */,
+				BFDF53E91E35D76D00DA028A /* PaynowViewController.swift in Sources */,
+				BFDF53E71E35CF5900DA028A /* ReceiptViewController.swift in Sources */,
 				BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */,
 				BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */,
 				BF8D25AC1E2CA4EF001E5B87 /* UnitsListViewController.swift in Sources */,
