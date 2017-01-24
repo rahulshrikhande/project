@@ -114,7 +114,7 @@ class PaynowViewController: UIViewController, UITextFieldDelegate {
         dateButton.isHidden = true
         paynowLabel.frame = CGRect(x:30, y:290, width:67, height: 21)
         payNowTextField.frame = CGRect(x:185, y:285, width:174, height: 30)
-        submitPayment.frame = CGRect(x:68, y:418, width:238, height: 35)
+        submitPayment.frame = CGRect(x:68, y:333, width:238, height: 35)
     }
     func updateUICheque() {
         chequeNumber.isHidden = false

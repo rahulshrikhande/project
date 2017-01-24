@@ -53,6 +53,7 @@ class ReceiptViewController: UIViewController, UITextFieldDelegate {
                 self.invoices = [DataNameList]()
                 if let result = response.result.value {
                     let dictionary = result as? NSDictionary
+                    print(dictionary!)
                     self.parseInvoiceDetails(dictionary: dictionary as! [String : AnyObject])
                     self.invoices = self.parseDictionary(dictionary: dictionary as! [String : AnyObject])
                     DispatchQueue.main.async {
