@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		423EBAADE67DA88EE2565003 /* Pods_TBS_SMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */; };
 		BF0CA0D91E26176A0045BB79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0CA0D81E26176A0045BB79 /* Alamofire.framework */; };
+		BF2F7AC31E371C8600CB9BDA /* FunctionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F7AC21E371C8600CB9BDA /* FunctionLibrary.swift */; };
 		BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */; };
 		BF6F9EFF1E28CADF0058F50F /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */; };
 		BF6F9F011E28CC640058F50F /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */; };
@@ -45,6 +46,7 @@
 		602346D37509FF979147AF5F /* Pods-TBS-SMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.debug.xcconfig"; sourceTree = "<group>"; };
 		A0060081309AC2E1E57721BB /* Pods-TBS-SMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBS-SMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBS-SMS/Pods-TBS-SMS.release.xcconfig"; sourceTree = "<group>"; };
 		BF0CA0D81E26176A0045BB79 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BF2F7AC21E371C8600CB9BDA /* FunctionLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionLibrary.swift; sourceTree = "<group>"; };
 		BF6BD82B1E2F518A00782FFA /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
 		BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				BFAF33F61E322865003D5C47 /* SelectedProductCell.swift */,
 				BF7E4B771E332000009F5B70 /* Loading.xib */,
 				BF7E4B791E3320AB009F5B70 /* NothingFound.xib */,
+				BF2F7AC21E371C8600CB9BDA /* FunctionLibrary.swift */,
 			);
 			path = "TBS-SMS";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */,
 				BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */,
 				BFAF33F71E322865003D5C47 /* SelectedProductCell.swift in Sources */,
+				BF2F7AC31E371C8600CB9BDA /* FunctionLibrary.swift in Sources */,
 				BF8D25AA1E2CA10B001E5B87 /* CreateInvoiceController.swift in Sources */,
 				BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,

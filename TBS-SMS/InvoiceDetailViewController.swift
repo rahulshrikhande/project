@@ -90,9 +90,7 @@ class InvoiceDetailViewController: UIViewController {
             "company_code": dbNameStored,
             "invoice_id": invoice.invoice_id
             ]
-        
         let url = "http://www.tbswebhost.in/sms_uat/iosPhp/get_invoice_view.php"
-       
         Alamofire.request(url, parameters: parameters ).responseJSON { response in
             
             switch response.result {

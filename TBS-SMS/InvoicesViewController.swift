@@ -42,9 +42,12 @@ class InvoicesViewController: UIViewController {
         
         cellNib = UINib( nibName: TableViewCellIdentifiers.loadingCell, bundle: nil )
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
-        self.fetchInvoiceData(fetchDataFor: segueToPerform)
+       
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+         self.fetchInvoiceData(fetchDataFor: segueToPerform)
     }
     // Before Calling nib its Cell-Identifiers needs to be described here.
     struct TableViewCellIdentifiers {
@@ -214,7 +217,6 @@ extension InvoicesViewController: UITableViewDataSource {
         }))
         present(refreshAlert, animated: true, completion: nil)
     }
-    
     func showAlertMessage(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)

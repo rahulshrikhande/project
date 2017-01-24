@@ -12,7 +12,6 @@ import UIKit
 class InvoicesCell: UITableViewCell {
     
     @IBOutlet weak var cancelledInvoice: UIImageView!
-    
     @IBOutlet weak var invoiceNumber: UILabel!
     @IBOutlet weak var invoiceDate: UILabel!
     @IBOutlet weak var customerName: UILabel!
@@ -41,7 +40,6 @@ class InvoicesCell: UITableViewCell {
         cancel.isHidden = false
         receipt.isHidden = false
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         payNow.layer.cornerRadius = 5
@@ -51,16 +49,13 @@ class InvoicesCell: UITableViewCell {
         let selectedView = UIView(frame: CGRect.zero)
         selectedView.backgroundColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 0.5)
         selectedBackgroundView = selectedView
-        // Initialization code
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     func configureForInvoicesList(invoices: DataNameList) {
-        
         invoiceNumber.text = invoices.invoiceNo
         invoiceDate.text = invoices.date
         customerName.text = invoices.customerName
@@ -70,7 +65,7 @@ class InvoicesCell: UITableViewCell {
         balanceAmount.text = invoices.remainBalance
         
         if Float(invoices.remainBalance)! == 0.0 {
-            cancel.frame = CGRect(x:261,y:145,width:50,height:18)
+            cancel.frame = CGRect(x:239,y:143,width:50,height:18)
             payNow.isHidden = true
         }
         if invoices.status != "Cancelled" {
@@ -84,4 +79,3 @@ class InvoicesCell: UITableViewCell {
         }
     }    
 }
-
