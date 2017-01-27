@@ -9,7 +9,11 @@
 import UIKit
 import Alamofire
 
-class SearchProductsController: UIViewController, UITextFieldDelegate {
+class SearchProductsController: UIViewController, UITextFieldDelegate, ProductDetailsControllerDelegate {
+    
+    func addProductDetails(controller: ProductDetailsController) {
+        dismiss(animated: true, completion: nil)
+    }
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -81,14 +85,26 @@ extension SearchProductsController: UITableViewDataSource {
 //Select TableView cell 
 extension SearchProductsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        print(indexPath)
         performSegue(withIdentifier: "enterDetails", sender: indexPath)
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if products.count == 0 || isLoading {
             return nil
         } else {
+            print(indexPath)
             return indexPath
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "enterDetails" {
+            let navigationController = segue.destination
+            let controller = navigationController as! ProductDetailsController
+            controller.delegate = self
+            let indexPath = sender as! NSIndexPath
+            let product = products[indexPath.row]
+            controller.productInfo = product
         }
     }
 }

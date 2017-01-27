@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CreateInvoiceController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -24,10 +25,12 @@ class CreateInvoiceController: UIViewController {
     var products = [DataNameList]()
     var isLoading = false
     
-    
+    var productInfo : [ProductInfo]!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         tableView.rowHeight = 90
         
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
@@ -39,10 +42,14 @@ class CreateInvoiceController: UIViewController {
         
         cellNib = UINib( nibName: TableViewCellIdentifiers.loadingCell, bundle: nil )
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
-        
-
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        productInfo = DBManager.shared.loadProducts()
+        print(productInfo!)
+        
+    }
     // Before Calling nib its Cell-Identifiers needs to be described here.
     struct TableViewCellIdentifiers {
         static let selectedProduct = "SelectedProduct"

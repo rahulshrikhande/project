@@ -36,6 +36,13 @@
 		BFC256841E25EC7200682046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC256821E25EC7200682046 /* LaunchScreen.storyboard */; };
 		BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2568D1E260C5000682046 /* LoginViewController.swift */; };
 		BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */; };
+		BFDBB3141E3B07EB00114153 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB30A1E3B07EB00114153 /* FMDatabase.m */; };
+		BFDBB3151E3B07EB00114153 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB30C1E3B07EB00114153 /* FMDatabaseAdditions.m */; };
+		BFDBB3161E3B07EB00114153 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB30E1E3B07EB00114153 /* FMDatabasePool.m */; };
+		BFDBB3171E3B07EB00114153 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3101E3B07EB00114153 /* FMDatabaseQueue.m */; };
+		BFDBB3181E3B07EB00114153 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB3131E3B07EB00114153 /* FMResultSet.m */; };
+		BFDBB31A1E3B084100114153 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBB3191E3B084100114153 /* libsqlite3.0.tbd */; };
+		BFDBB31C1E3B09E400114153 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDBB31B1E3B09E400114153 /* DBManager.swift */; };
 		BFDF53E71E35CF5900DA028A /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF53E61E35CF5900DA028A /* ReceiptViewController.swift */; };
 		BFDF53E91E35D76D00DA028A /* PaynowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF53E81E35D76D00DA028A /* PaynowViewController.swift */; };
 		BFF9A83F1E31D576003F0D23 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */; };
@@ -75,6 +82,20 @@
 		BFC256851E25EC7200682046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFC2568D1E260C5000682046 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFD46FC91E277C81007BBA93 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		BFDBB3081E3B07DB00114153 /* TBS-SMS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TBS-SMS-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFDBB3091E3B07EB00114153 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BFDBB30A1E3B07EB00114153 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BFDBB30B1E3B07EB00114153 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BFDBB30C1E3B07EB00114153 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BFDBB30D1E3B07EB00114153 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BFDBB30E1E3B07EB00114153 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BFDBB30F1E3B07EB00114153 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BFDBB3101E3B07EB00114153 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BFDBB3111E3B07EB00114153 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		BFDBB3121E3B07EB00114153 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BFDBB3131E3B07EB00114153 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BFDBB3191E3B084100114153 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BFDBB31B1E3B09E400114153 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		BFDF53E61E35CF5900DA028A /* ReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
 		BFDF53E81E35D76D00DA028A /* PaynowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaynowViewController.swift; sourceTree = "<group>"; };
 		BFF9A83E1E31D576003F0D23 /* ProductDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsController.swift; sourceTree = "<group>"; };
@@ -87,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDBB31A1E3B084100114153 /* libsqlite3.0.tbd in Frameworks */,
 				423EBAADE67DA88EE2565003 /* Pods_TBS_SMS.framework in Frameworks */,
 				BF0CA0D91E26176A0045BB79 /* Alamofire.framework in Frameworks */,
 				BF6F9EFF1E28CADF0058F50F /* SideMenu.framework in Frameworks */,
@@ -108,6 +130,7 @@
 		60F87326998845A2D45F7CDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFDBB3191E3B084100114153 /* libsqlite3.0.tbd */,
 				BF6F9EFE1E28CADF0058F50F /* SideMenu.framework */,
 				BF0CA0D81E26176A0045BB79 /* Alamofire.framework */,
 				DD7EFEF82902D466E4E314C4 /* Pods_TBS_SMS.framework */,
@@ -136,6 +159,7 @@
 		BFC256781E25EC7200682046 /* TBS-SMS */ = {
 			isa = PBXGroup;
 			children = (
+				BFDBB3071E3B07AD00114153 /* FMDB */,
 				BFC256791E25EC7200682046 /* AppDelegate.swift */,
 				BFC2567B1E25EC7200682046 /* MainViewController.swift */,
 				BF6F9F001E28CC640058F50F /* SideMenuTableView.swift */,
@@ -167,8 +191,28 @@
 				BF7E4B771E332000009F5B70 /* Loading.xib */,
 				BF7E4B791E3320AB009F5B70 /* NothingFound.xib */,
 				BF2F7AC21E371C8600CB9BDA /* FunctionLibrary.swift */,
+				BFDBB31B1E3B09E400114153 /* DBManager.swift */,
 			);
 			path = "TBS-SMS";
+			sourceTree = "<group>";
+		};
+		BFDBB3071E3B07AD00114153 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				BFDBB3091E3B07EB00114153 /* FMDatabase.h */,
+				BFDBB30A1E3B07EB00114153 /* FMDatabase.m */,
+				BFDBB30B1E3B07EB00114153 /* FMDatabaseAdditions.h */,
+				BFDBB30C1E3B07EB00114153 /* FMDatabaseAdditions.m */,
+				BFDBB30D1E3B07EB00114153 /* FMDatabasePool.h */,
+				BFDBB30E1E3B07EB00114153 /* FMDatabasePool.m */,
+				BFDBB30F1E3B07EB00114153 /* FMDatabaseQueue.h */,
+				BFDBB3101E3B07EB00114153 /* FMDatabaseQueue.m */,
+				BFDBB3111E3B07EB00114153 /* FMDB.h */,
+				BFDBB3121E3B07EB00114153 /* FMResultSet.h */,
+				BFDBB3131E3B07EB00114153 /* FMResultSet.m */,
+				BFDBB3081E3B07DB00114153 /* TBS-SMS-Bridging-Header.h */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +250,7 @@
 				TargetAttributes = {
 					BFC256751E25EC7100682046 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -306,17 +351,23 @@
 				BF86E1801E2E10C700A48ECA /* TermsAndConditionController.swift in Sources */,
 				BF8D25B01E2CEE0D001E5B87 /* UnitDetailViewController.swift in Sources */,
 				BFC2568E1E260C5000682046 /* LoginViewController.swift in Sources */,
+				BFDBB3181E3B07EB00114153 /* FMResultSet.m in Sources */,
 				BFDF53E91E35D76D00DA028A /* PaynowViewController.swift in Sources */,
 				BFDF53E71E35CF5900DA028A /* ReceiptViewController.swift in Sources */,
 				BFC2567C1E25EC7200682046 /* MainViewController.swift in Sources */,
+				BFDBB3141E3B07EB00114153 /* FMDatabase.m in Sources */,
+				BFDBB3171E3B07EB00114153 /* FMDatabaseQueue.m in Sources */,
+				BFDBB3151E3B07EB00114153 /* FMDatabaseAdditions.m in Sources */,
 				BFFABD4F1E30CFDA00153D43 /* SearchProductsController.swift in Sources */,
 				BF8D25AC1E2CA4EF001E5B87 /* UnitsListViewController.swift in Sources */,
+				BFDBB3161E3B07EB00114153 /* FMDatabasePool.m in Sources */,
 				BFF9A83F1E31D576003F0D23 /* ProductDetailsController.swift in Sources */,
 				BF86E1821E2E110200A48ECA /* UpdateVatController.swift in Sources */,
 				BF8D25AE1E2CB76B001E5B87 /* DataNameList.swift in Sources */,
 				BFAF33F71E322865003D5C47 /* SelectedProductCell.swift in Sources */,
 				BF2F7AC31E371C8600CB9BDA /* FunctionLibrary.swift in Sources */,
 				BF8D25AA1E2CA10B001E5B87 /* CreateInvoiceController.swift in Sources */,
+				BFDBB31C1E3B09E400114153 /* DBManager.swift in Sources */,
 				BF6BD82C1E2F518A00782FFA /* DimmingPresentationController.swift in Sources */,
 				BFC2567A1E25EC7200682046 /* AppDelegate.swift in Sources */,
 				BFD46FCA1E277C81007BBA93 /* CompanyLoginViewController.swift in Sources */,
@@ -445,6 +496,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -453,6 +505,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbsind.TBS-SMS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TBS-SMS/TBS-SMS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -463,6 +517,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -471,6 +526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbsind.TBS-SMS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TBS-SMS/TBS-SMS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
