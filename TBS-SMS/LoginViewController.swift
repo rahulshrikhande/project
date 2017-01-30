@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
                         UserDefaults.standard.set(JSON["company_logo"], forKey: "CompanyLogo")
                         UserDefaults.standard.set(JSON["company_name"], forKey: "CompanyName")
                         UserDefaults.standard.set(JSON["company_address"], forKey: "CompanyAddress")
+                      //  UserDefaults.standard.set(JSON["vat"], forKey: "VAT")
                     }
                     UserDefaults.standard.set(true, forKey: "userLoggedIn")
                     UserDefaults.standard.set(true, forKey: "dbLoggedIn")

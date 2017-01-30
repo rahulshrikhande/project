@@ -19,10 +19,10 @@ class SearchProductsController: UIViewController, UITextFieldDelegate, ProductDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var proceedButton: UIButton!
     
-    
+      
     var isLoading = false
     var hasSearched = false
-    var products = [DataNameList]()
+    var products : [ProductInfo]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ extension SearchProductsController: UITableViewDataSource {
         } else {
             let product = products[indexPath.row]
             let label = cell.viewWithTag(1000) as! UILabel
-            label.text! = "\(product.product_title)"
+            label.text! = "\(product.product_title!)"
         
         return cell
         }
@@ -129,7 +129,7 @@ extension SearchProductsController: UISearchBarDelegate {
                 
                 switch response.result {
                 case .success:
-                    self.products = [DataNameList]()
+                    self.products = [ProductInfo]()
                     if let result = response.result.value {
                         let dictionary = result as? NSDictionary
                         
@@ -149,26 +149,26 @@ extension SearchProductsController: UISearchBarDelegate {
         }
     }
         
-    func parseDictionary(dictionary: [String: AnyObject]) -> [DataNameList] {
+    func parseDictionary(dictionary: [String: AnyObject]) -> [ProductInfo] {
         guard let array = dictionary["product"] as? [AnyObject]
             else {
                 print("Expected 'result' array")
                 return []
         }
-        products = [DataNameList]()
+        products = [ProductInfo]()
             
         for resultDict in array {
-            var product: DataNameList?
-            product = parseUnit(dictionary: resultDict as! [String : AnyObject])
+            var product: ProductInfo!
+            product = parseProduct(dictionary: resultDict as! [String : AnyObject])
             if let result = product {
                 products.append(result)
             }
         }
         return products
     }
-    func parseUnit(dictionary: [String: AnyObject]) -> DataNameList {
-        let product = DataNameList()
-        product.product_id = dictionary["id"] as! String
+    func parseProduct(dictionary: [String: AnyObject]) -> ProductInfo {
+        var product = ProductInfo()
+        product.product_id = Int(dictionary["id"] as! String)
         product.product_title = dictionary["title"] as! String
         return product
     }

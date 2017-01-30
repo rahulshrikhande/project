@@ -61,6 +61,7 @@ class UpdateVatController: UIViewController {
             //Handle the json response here
             switch response.result {
             case .success:
+           //     UserDefaults.standard.set(self.vatTextField.text!, forKey: "VAT")
                 if let result = response.result.value {
                     let dictionary = result as? NSDictionary
                     let message = dictionary?["message"] as! String

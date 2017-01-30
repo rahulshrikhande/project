@@ -10,6 +10,7 @@ import UIKit
 
 class DBManager: NSObject {
     
+    let field_ID = "ID"
     let field_ProductID = "ProductID"
     let field_ProductTitle = "title"
     let field_ProductQuantity = "quantity"
@@ -26,7 +27,7 @@ class DBManager: NSObject {
         super.init()
         let documentsDirectory = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString) as String
         pathToDatabase = documentsDirectory.appending("/\(databaseFileName)")
-        print("Path To dic: \(pathToDatabase)")
+        //print("Path To dic: \(pathToDatabase)")
     }
     func createDatabase() -> Bool {
         var created = false
@@ -36,7 +37,7 @@ class DBManager: NSObject {
             if database != nil {
                 // Open the database.
                 if database.open() {
-                    let createProductsTableQuery = "create table products (\(field_ProductID) integer not null, \(field_ProductTitle) text not null, \(field_ProductQuantity) text not null, \(field_ProductUnit) text not null, \(field_ProductAmount) text not null)"
+                    let createProductsTableQuery = "create table products (\(field_ID) integer primary key autoincrement not null, \(field_ProductID) integer not null, \(field_ProductTitle) text not null, \(field_ProductQuantity) text not null, \(field_ProductUnit) text not null, \(field_ProductAmount) text not null)"
                     
                     do {
                         try database.executeUpdate(createProductsTableQuery, values: nil)
@@ -72,7 +73,7 @@ class DBManager: NSObject {
     func insertData(productID: Int, productTitle : String, quantity: String, unit: String, amount: String ) {
          if openDatabase() {
             let query = "insert into products (\(field_ProductID), \(field_ProductTitle), \(field_ProductQuantity), \(field_ProductUnit), \(field_ProductAmount)) values ('\(productID)', '\(productTitle)', '\(quantity)', '\(unit)', '\(amount)')"
-            print("QUERY : \(query)")
+            
             if !database.executeStatements(query) {
                 print("Failed to insert initial data into the database.")
                 print(database.lastError(), database.lastErrorMessage())
@@ -88,15 +89,15 @@ class DBManager: NSObject {
             
             do {
                 let results = try database.executeQuery(query, values: nil)
-                print(results)
+               
                 while results.next() {
-                    let product = ProductInfo(product_id: Int(results.int(forColumn: field_ProductID)),
+                    let product = ProductInfo(id: Int(results.int(forColumn: field_ID)),                        
+                                          product_id: Int(results.int(forColumn: field_ProductID)),
                                           product_title: results.string(forColumn: field_ProductTitle),
                                           quantity: results.string(forColumn: field_ProductQuantity),
                                           unit: results.string(forColumn: field_ProductUnit),
                                           amount: results.string(forColumn: field_ProductAmount)
-                    )
-                    
+                    )                    
                     if products == nil {
                         products = [ProductInfo]()
                     }
@@ -113,7 +114,7 @@ class DBManager: NSObject {
     func deleteProduct(withID ID: Int) -> Bool {
         var deleted = false
         if openDatabase() {
-            let query = "delete from products where \(field_ProductID)=?"
+            let query = "delete from products where \(field_ID)=?"
             
             do {
                 try database.executeUpdate(query, values: [ID])

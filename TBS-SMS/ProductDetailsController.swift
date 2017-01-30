@@ -13,6 +13,7 @@ protocol ProductDetailsControllerDelegate : class {
 }
 
 struct ProductInfo {
+    var id: Int!
     var product_id: Int!
     var product_title: String!
     var quantity: String!
@@ -30,14 +31,14 @@ class ProductDetailsController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var amountTextField: UITextField!
     var unit = ""
     
-    var productInfo : DataNameList!
+    var productInfo : ProductInfo!
     weak var delegate: ProductDetailsControllerDelegate?
     
     var pickerDataSource = ["White", "Red", "Green", "Blue"];
     override func viewDidLoad() {
         super.viewDidLoad()
         if let product = productInfo {
-            print(product.product_id)
+            
             titleTabel.text = product.product_title
         }
         self.pickerView.dataSource = self
@@ -73,13 +74,14 @@ class ProductDetailsController: UIViewController, UIPickerViewDataSource, UIPick
         self.view.endEditing(true)
     }
     @IBAction func addProduct(_ sender: UIButton) {
-        let productID = productInfo.product_id
-        let productName = productInfo.product_title
-        let quantity = quantityTextField.text
-        let amount = amountTextField.text
+        let productID = productInfo.product_id!
+        let productName = productInfo.product_title!
+        let quantity = quantityTextField.text!
+        let amount = amountTextField.text!
         let units = self.unit
         
-        DBManager.shared.insertData(productID: Int(productID)!, productTitle: productName, quantity: quantity!, unit: units, amount: amount!)
+        //Insert Data
+        DBManager.shared.insertData(productID: Int(productID), productTitle: productName, quantity: quantity, unit: units, amount: amount)
         delegate?.addProductDetails(controller: self)
     }
     
