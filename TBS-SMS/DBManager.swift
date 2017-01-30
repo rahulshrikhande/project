@@ -113,12 +113,22 @@ class DBManager: NSObject {
     }
     func deleteProduct(withID ID: Int) -> Bool {
         var deleted = false
+        var query = ""
         if openDatabase() {
-            let query = "delete from products where \(field_ID)=?"
-            
+            if ID == 0 {
+                 query = "delete from products"
+            } else {
+                 query = "delete from products where \(field_ID)=?"
+            }
+            print(query)
             do {
-                try database.executeUpdate(query, values: [ID])
-                deleted = true
+                if ID == 0 {
+                    try database.executeUpdate(query, values: nil)
+                    deleted = true
+                } else {
+                    try database.executeUpdate(query, values: [ID])
+                    deleted = true
+                }
             }
             catch {
                 print(error.localizedDescription)

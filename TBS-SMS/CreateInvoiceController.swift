@@ -28,7 +28,10 @@ class CreateInvoiceController: UIViewController, UITextFieldDelegate {
     var totalAmount : Float!
     var roundOfSale: Float!
     var balance: Float!
-    var para: Parameters = [:]
+    var para: Dictionary<String, Any> = [:]
+    var subArray = Array<Dictionary<String, Any>>()
+    let dbNameStored = UserDefaults.standard.string(forKey: "dbName")!
+    let userID = UserDefaults.standard.string(forKey: "ID")!
     
     var isLoading = false
     var parameters: Parameters = [:]
@@ -64,38 +67,57 @@ class CreateInvoiceController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func submitInvoice(_ sender: UIButton) {
-        
-       
-        productInfo = DBManager.shared.loadProducts()!
-       
+        let remainBalance = Float(paidAmount.text!)! - Float(totalAmountTextField.text!)!
         parameters = [
+            "company_code" : dbNameStored,
+            "user_id" : userID,
             "customer_name" : customerNameTextField.text!,
             "customer_mobile" : mobileTextField.text!,
             "amount" : amountTextField.text!,
             "vat_amount" : vatTextField.text!,
             "total_amount" : totalAmountTextField.text!,
             "amount_of_sale" : roundOfSaleTextField.text!,
-            "balance" : balanceTextField.text!,
-            "products":
-                [ para ]
+            "balance" : remainBalance,
+            "paid" : paidAmount.text!,
+            "products": subArray
         ]
-        print(parameters)
 
+        Alamofire.request("http://www.tbswebhost.in/sms_uat/iosPhp/create_invoice.php", parameters: parameters ).responseJSON { response in
+            
+            print(response.response!)
+            print(response.request!)
+            print(response.result)
+            
+            
+            switch response.result {
+            case .success:
+                if let result = response.result.value {
+                    
+                    let respond = DBManager.shared.deleteProduct(withID: 0)
+                    print(respond)
+                    print(result)
+                    _ = self.fetchProducts()
+                }
+            case .failure( _):
+                print("Error")
+            }
+        }
     }
     func footerData() {
         amount = 0
         vat = 0.12 //UserDefaults.standard.string(forKey: "VAT")
         
         for product in productInfo {
+            
             amount = Float(product.amount!)! + amount
             para = [
-                "serverProductId" : product.product_id,
-                "quantity" : product.quantity,
-                "unit" : product.unit,
-                "amount" : product.amount,
-            ]
+                "serverProductId" : product.product_id as AnyObject,
+                "quantity" : product.quantity as AnyObject,
+                "unit" : product.unit as AnyObject,
+                "amount" : product.amount as AnyObject,
+            ];
+            subArray.append(para)
         }
-        print(para)
         amountTextField.text = String(amount)
         vat = vat * amount
         vatTextField.text = String(vat)
