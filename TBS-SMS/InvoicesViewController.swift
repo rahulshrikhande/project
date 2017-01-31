@@ -42,8 +42,6 @@ class InvoicesViewController: UIViewController {
         
         cellNib = UINib( nibName: TableViewCellIdentifiers.loadingCell, bundle: nil )
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
-       
-
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {

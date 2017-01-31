@@ -10,9 +10,14 @@ import UIKit
 import Alamofire
 import SideMenu
 
+protocol MainViewControllerDelegate : class {
+    func shareAppLink(controller: MainViewController)
+}
+
 class MainViewController: UITableViewController {
 
     var userLoggedIn = false
+    var shareApp = ""
     
     @IBOutlet weak var todayReceived: UILabel!
     @IBOutlet weak var todaysCancelled: UILabel!
@@ -24,11 +29,12 @@ class MainViewController: UITableViewController {
     @IBOutlet weak var totalOutstanding: UILabel!
     @IBOutlet weak var cancelled: UIButton!
     @IBOutlet weak var cancelledAmount: UILabel!
+    weak var delegate: MainViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-       // showLoader()
+        print(shareApp)
         //Remove Lines from UITabelCell
         self.tableView.separatorStyle = .none
         //Color top Navigation bar to red
@@ -44,8 +50,8 @@ class MainViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-       
+        // Share App
+        shareAppLink(share: shareApp)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,8 +61,20 @@ class MainViewController: UITableViewController {
             performSegue(withIdentifier: "databaseLogin", sender: self)
         } else {
              self.fetchNumbers()
+        }        
+    }
+    func shareAppLink(share: String) {
+        if share ==  "Yes" {
+            let message = "Message goes here."
+            //Set the link to share.
+            if let link = NSURL(string: "http://yoururl.com")
+            {
+                let objectsToShare = [message,link] as [Any]
+                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+                self.present(activityVC, animated: true, completion: nil)
+            }
         }
-        
     }
     // Fetch Data
     func fetchNumbers() {

@@ -194,19 +194,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-lv-O3z">
-                                                    <rect key="frame" x="60" y="11" width="307" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Share-50" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-vh-5r6">
                                                     <rect key="frame" x="16" y="14" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-PV-OnR">
+                                                    <rect key="frame" x="44" y="0.0" width="331" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <inset key="titleEdgeInsets" minX="-258" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Share">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="shareApp:" destination="fSl-b2-4SL" eventType="touchUpInside" id="PiM-wL-0l3"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8P7-tO-coN" kind="show" identifier="shareApp" id="LiP-nX-drA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logout" id="fCL-Zd-cIh">
                                         <rect key="frame" x="0.0" y="475" width="375" height="44"/>
@@ -1602,7 +1610,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8B-In-tIX" id="1Ap-dE-uMS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8q-55-7yq">
@@ -2141,10 +2149,10 @@
         <image name="red_back" width="500" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4WO-8i-ieA"/>
-        <segue reference="bWP-Zu-DHE"/>
-        <segue reference="hNc-OV-Luv"/>
+        <segue reference="sQs-UB-oCR"/>
+        <segue reference="LiP-nX-drA"/>
         <segue reference="5mI-mR-m0a"/>
+        <segue reference="kbH-MW-cSD"/>
         <segue reference="Eo4-Xw-qp5"/>
     </inferredMetricsTieBreakers>
 </document>
