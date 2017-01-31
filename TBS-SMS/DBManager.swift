@@ -120,7 +120,6 @@ class DBManager: NSObject {
             } else {
                  query = "delete from products where \(field_ID)=?"
             }
-            print(query)
             do {
                 if ID == 0 {
                     try database.executeUpdate(query, values: nil)

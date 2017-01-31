@@ -34,16 +34,10 @@ class CompanyLoginViewController: UIViewController {
                     
                     self.performSegue(withIdentifier: "userLogin", sender: self)
                 }else {
-                    self.showAlertMessage()
+                    FunctionLibrary.shared.alertMessage(message: "Wrong Company Code")
                 }
             }
         }
-    }
-    func showAlertMessage() {
-        let alert = UIAlertController(title: "Alert", message: "Wrong Company code", preferredStyle: UIAlertControllerStyle.alert)
-        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

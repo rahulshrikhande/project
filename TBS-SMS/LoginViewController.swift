@@ -58,9 +58,10 @@ class LoginViewController: UIViewController {
                     }
                     UserDefaults.standard.set(true, forKey: "userLoggedIn")
                     UserDefaults.standard.set(true, forKey: "dbLoggedIn")
+                    
                     self.dismiss(animated: true, completion: nil)
                 case .failure( _):
-                    print("Error")
+                    FunctionLibrary.shared.alertMessage(message: "Wrong User-Id or Password")
                 }
         }
         

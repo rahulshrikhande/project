@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class FunctionLibrary: UIViewController  {
+    
+    static let shared: FunctionLibrary = FunctionLibrary()
 
     func alertMessage(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)

@@ -794,6 +794,9 @@
                                 <state key="normal" title="0">
                                     <color key="titleColor" red="1" green="0.96375033939999999" blue="0.97921682200000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="proceed:" destination="Sdh-XW-jh0" eventType="touchUpInside" id="JS0-I5-KUY"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-IF-IIs">
                                 <rect key="frame" x="0.0" y="108" width="375" height="508"/>
@@ -1962,7 +1965,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="red_back" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-N0-tH3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="228"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Company Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyF-Ut-zg7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Company Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyF-Ut-zg7">
                                 <rect key="frame" x="16" y="311" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Vr1-6k-vZq"/>
@@ -2003,6 +2006,17 @@
                                     <action selector="continueToLogin:" destination="sZp-G5-WbJ" eventType="touchUpInside" id="ojw-JT-wra"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c9A-TU-3c9">
+                                <rect key="frame" x="154" y="144" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TBS-SMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6y-yO-k2F">
+                                <rect key="frame" x="150" y="217" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.99851317539999995" blue="0.99980803100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2032,7 +2046,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18a-v8-JE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="179"/>
+            <point key="canvasLocation" x="1093.5999999999999" y="178.56071964017991"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Obz-yd-xrV">
@@ -2146,13 +2160,14 @@
         <image name="Search_50" width="50" height="50"/>
         <image name="Settings-50" width="50" height="50"/>
         <image name="Share-50" width="50" height="50"/>
+        <image name="logo" width="512" height="512"/>
         <image name="red_back" width="500" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sQs-UB-oCR"/>
+        <segue reference="hNc-OV-Luv"/>
         <segue reference="LiP-nX-drA"/>
-        <segue reference="5mI-mR-m0a"/>
-        <segue reference="kbH-MW-cSD"/>
         <segue reference="Eo4-Xw-qp5"/>
+        <segue reference="4WO-8i-ieA"/>
+        <segue reference="5mI-mR-m0a"/>
     </inferredMetricsTieBreakers>
 </document>
